@@ -64,9 +64,13 @@ h2{font-size:clamp(24px,3.4vw,34px);margin:0 0 10px;color:var(--head)}
 .serve svg{color:var(--navy);flex:none}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .serve svg{color:var(--yellow)}}
 :root[data-theme="dark"] .serve svg{color:var(--yellow)}
-.clients{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
-.client{display:flex;align-items:center;gap:12px;padding:16px 18px;background:var(--bg);border:1px solid var(--border);border-left:4px solid var(--yellow);border-radius:10px;font-weight:600;font-size:15px;line-height:1.4}
-.client i{flex:none;width:40px;height:40px;border-radius:50%;background:var(--navy);color:var(--yellow);display:grid;place-items:center;font-style:normal;font-weight:800;font-size:13px}
+.clients{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.client{display:flex;flex-direction:column;align-items:stretch;background:var(--bg);border:1px solid var(--border);border-bottom:4px solid var(--yellow);border-radius:12px;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.client:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(11,42,91,.15)}
+.client .lg{height:110px;background:#fff;display:grid;place-items:center;padding:14px;border-bottom:1px solid var(--border)}
+.client .lg img{max-width:100%;max-height:100%;object-fit:contain}
+.client .lg i{width:64px;height:64px;border-radius:50%;background:var(--navy);color:var(--yellow);display:grid;place-items:center;font-style:normal;font-weight:800;font-size:20px}
+.client span{padding:12px 14px;font-weight:600;font-size:14px;line-height:1.4;text-align:center;flex:1;display:grid;place-items:center}
 .banner{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;border-radius:18px;padding:40px 30px;display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;border-left:8px solid var(--yellow)}
 .banner h2{color:#fff;margin:0 0 4px}
 .banner p{margin:0;opacity:.9}
@@ -187,16 +191,16 @@ footer span{color:var(--yellow);font-weight:700}
       <h2>Organisations We Work With</h2>
       <p class="sub">We are proud to supply and support these institutions and businesses.</p>
       <div class="clients">
-        <div class="client"><i>RB</i>Ravindra Bharthi Public School</div>
-        <div class="client"><i>NA</i>NRI Academy of Sciences</div>
-        <div class="client"><i>SP</i>School of Planning and Architecture</div>
-        <div class="client"><i>RC</i>Rainbow Children’s Medicare Limited</div>
-        <div class="client"><i>BN</i>BirlaNu Ltd</div>
-        <div class="client"><i>PH</i>Peddeswar Health Care Center (PHCC)</div>
-        <div class="client"><i>MD</i>Model Dairy Pvt Ltd</div>
-        <div class="client"><i>SM</i>Sweet Magic</div>
-        <div class="client"><i>MT</i>Maxclean Trader</div>
-        <div class="client"><i>ES</i>Employees State Insurance Corporation (ESIC) Partners</div>
+        <div class="client"><div class="lg"><img src="logos/ravindra-bharthi.png" alt="Ravindra Bharthi Public School logo" loading="lazy" onerror="this.outerHTML='<i>RB</i>'"></div><span>Ravindra Bharthi Public School</span></div>
+        <div class="client"><div class="lg"><img src="logos/nri-academy.png" alt="NRI Academy of Sciences logo" loading="lazy" onerror="this.outerHTML='<i>NA</i>'"></div><span>NRI Academy of Sciences</span></div>
+        <div class="client"><div class="lg"><img src="logos/spa.png" alt="School of Planning and Architecture logo" loading="lazy" onerror="this.outerHTML='<i>SP</i>'"></div><span>School of Planning and Architecture</span></div>
+        <div class="client"><div class="lg"><img src="logos/rainbow.png" alt="Rainbow Children’s Medicare Limited logo" loading="lazy" onerror="this.outerHTML='<i>RC</i>'"></div><span>Rainbow Children’s Medicare Limited</span></div>
+        <div class="client"><div class="lg"><img src="logos/birlanu.png" alt="BirlaNu Ltd logo" loading="lazy" onerror="this.outerHTML='<i>BN</i>'"></div><span>BirlaNu Ltd</span></div>
+        <div class="client"><div class="lg"><img src="logos/phcc.png" alt="Peddeswar Health Care Center (PHCC) logo" loading="lazy" onerror="this.outerHTML='<i>PH</i>'"></div><span>Peddeswar Health Care Center (PHCC)</span></div>
+        <div class="client"><div class="lg"><img src="logos/model-dairy.png" alt="Model Dairy Pvt Ltd logo" loading="lazy" onerror="this.outerHTML='<i>MD</i>'"></div><span>Model Dairy Pvt Ltd</span></div>
+        <div class="client"><div class="lg"><img src="logos/sweet-magic.png" alt="Sweet Magic logo" loading="lazy" onerror="this.outerHTML='<i>SM</i>'"></div><span>Sweet Magic</span></div>
+        <div class="client"><div class="lg"><img src="logos/maxclean.png" alt="Maxclean Trader logo" loading="lazy" onerror="this.outerHTML='<i>MT</i>'"></div><span>Maxclean Trader</span></div>
+        <div class="client"><div class="lg"><img src="logos/esic.png" alt="Employees State Insurance Corporation (ESIC) Partners logo" loading="lazy" onerror="this.outerHTML='<i>ES</i>'"></div><span>Employees State Insurance Corporation (ESIC) Partners</span></div>
       </div>
     </div>
   </section>
