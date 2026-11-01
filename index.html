@@ -726,6 +726,382 @@
     .tietrack { width: auto; flex-wrap: wrap; justify-content: center; animation: none !important; transform: none !important; }
     .tietrack [aria-hidden="true"] { display: none; }
   }
+
+  /* ========================================================
+     AUTHENTIC FOUNDER LEADERSHIP SPOTLIGHT
+     100% Authentic Human Leadership - K N S Enterprise
+     ======================================================== */
+  .founder-card {
+    background: linear-gradient(135deg, rgba(7, 20, 16, 0.95), rgba(13, 34, 27, 0.92)), radial-gradient(circle at 20% 30%, rgba(212,175,55,0.15) 0%, transparent 60%);
+    border: 1.5px solid var(--border-gold);
+    border-radius: 28px;
+    padding: 48px;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.65), 0 0 35px var(--gold-glow);
+    position: relative;
+    overflow: hidden;
+  }
+  .founder-grid {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  @media (max-width: 900px) {
+    .founder-card { padding: 28px 20px; }
+    .founder-grid { grid-template-columns: 1fr; gap: 28px; }
+  }
+  .founder-frame {
+    position: relative;
+    border-radius: 22px;
+    overflow: hidden;
+    border: 1.5px solid var(--border-gold);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    aspect-ratio: 4 / 5;
+    background: #030806;
+  }
+  .founder-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+  .founder-frame:hover .founder-img { transform: scale(1.03); }
+  .founder-badge {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    right: 14px;
+    background: rgba(3, 8, 6, 0.88);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(212,175,55,0.4);
+    border-radius: 12px;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.04em;
+  }
+  .founder-badge-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #2ee6a6;
+    box-shadow: 0 0 10px #2ee6a6;
+    animation: pulseDot 2s infinite;
+  }
+  @keyframes pulseDot { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.85); } }
+  .founder-quick-contact {
+    margin-top: 16px;
+  }
+  .founder-wa-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #25d366;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 13.5px;
+    padding: 13px 18px;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+    transition: all 0.3s ease;
+  }
+  .founder-wa-btn:hover {
+    background: #1eb956;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(37, 211, 102, 0.5);
+    color: #fff;
+  }
+  .founder-pill {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 16px;
+  }
+  .founder-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(24px, 3.2vw, 38px);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.25;
+    margin-bottom: 20px;
+  }
+  .founder-statement {
+    font-size: 15.5px;
+    line-height: 1.75;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+    border-left: 3px solid var(--gold);
+    padding-left: 20px;
+  }
+  .founder-statement strong { color: #fff; }
+  .founder-meta {
+    margin-bottom: 24px;
+  }
+  .founder-name {
+    font-family: 'Outfit', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    color: #fff;
+  }
+  .founder-role {
+    font-size: 13px;
+    color: var(--gold-light);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+  .credentials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+  }
+  .cred-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .cred-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gold-light);
+    font-weight: 700;
+  }
+  .cred-val {
+    font-size: 13.5px;
+    color: #e2e8f0;
+    font-weight: 700;
+  }
+
+  /* ========================================================
+     RESPONSIVE B2B WHOLESALE CATALOG (Natural Smooth Grid)
+     ======================================================== */
+  .catalog-filters {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 28px 0 40px;
+  }
+  .cat-pill {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    padding: 10px 22px;
+    border-radius: 999px;
+    font-family: inherit;
+    font-size: 13.5px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .cat-pill:hover { border-color: var(--gold); color: #fff; }
+  .cat-pill.active {
+    background: var(--gold);
+    color: #030806;
+    border-color: var(--gold);
+    box-shadow: 0 4px 20px var(--gold-glow);
+  }
+  .catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 24px;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+  .catalog-card {
+    background: var(--card-surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s, box-shadow 0.35s;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+  }
+  .catalog-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--border-gold);
+    box-shadow: 0 24px 50px rgba(0,0,0,0.6), 0 0 25px var(--gold-glow);
+  }
+  .catalog-img-wrap {
+    position: relative;
+    height: 180px;
+    background: #030806;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border);
+  }
+  .catalog-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+  .catalog-card:hover .catalog-img { transform: scale(1.05); }
+  .catalog-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(3, 8, 6, 0.85);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--border-gold);
+    color: var(--gold-light);
+    font-size: 10.5px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 999px;
+  }
+  .catalog-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-between;
+  }
+  .catalog-cat-tag {
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--gold);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .catalog-card h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+    line-height: 1.35;
+  }
+  .catalog-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.55;
+    margin-bottom: 16px;
+  }
+  .catalog-specs {
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 12px;
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .catalog-spec-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+  }
+  .catalog-spec-lbl {
+    color: #94a3b8;
+  }
+  .catalog-spec-val {
+    color: #e2e8f0;
+    font-weight: 700;
+  }
+  .btn-catalog-rfq {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border);
+    color: #fff;
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 12.5px;
+    font-weight: 800;
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: all 0.3s;
+  }
+  .catalog-card:hover .btn-catalog-rfq {
+    background: var(--gold);
+    color: #030806;
+    border-color: var(--gold);
+    box-shadow: 0 4px 18px var(--gold-glow);
+  }
+
+  /* ========================================================
+     4-STEP INSTITUTIONAL PROCUREMENT FLOW
+     ======================================================== */
+  .steps-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    max-width: 1300px;
+    margin: 36px auto 0;
+  }
+  .step-card {
+    background: var(--card-surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 32px 24px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.35s ease, border-color 0.35s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .step-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--border-gold);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  }
+  .step-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 42px;
+    font-weight: 800;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 16px;
+    opacity: 0.9;
+  }
+  .step-card h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 12px;
+  }
+  .step-card p {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  .step-tag {
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--gold-light);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding-top: 14px;
+  }
 </style>
 </head>
 <body>
@@ -837,141 +1213,423 @@
     </div>
   </div>
 
-  <!-- ScrollTide Inspired Motion Gradient Mesh Showcase -->
-  <section class="section" style="padding-top: 60px; padding-bottom: 20px;">
-    <div style="background: linear-gradient(135deg, rgba(7, 20, 16, 0.95), rgba(13, 34, 27, 0.9)), radial-gradient(circle at 20% 30%, rgba(212,175,55,0.18) 0%, transparent 60%), radial-gradient(circle at 80% 70%, rgba(46,230,166,0.12) 0%, transparent 60%); border: 1.5px solid var(--border-gold); border-radius: 32px; padding: 60px; position: relative; overflow: hidden; box-shadow: 0 40px 100px rgba(0,0,0,0.8);">
-      <div style="position: absolute; top: -60px; right: -60px; width: 320px; height: 320px; background: radial-gradient(circle, rgba(212,175,55,0.25) 0%, transparent 70%); border-radius: 50%; filter: blur(50px); pointer-events: none;"></div>
-      <div style="max-width: 800px; margin: 0 auto; text-align: center; position: relative; z-index: 2;">
-        <span style="font-size: 11px; font-weight: 800; color: var(--gold); text-transform: uppercase; letter-spacing: 0.3em; display: block; margin-bottom: 12px;">Cinematic Motion &amp; GPU Meshes</span>
-        <h2 style="font-family: 'Syne', sans-serif; font-size: clamp(28px, 4vw, 42px); font-weight: 800; color: #fff; margin-bottom: 20px;">Built Like ScrollTide. Powered for B2B Enterprise.</h2>
-        <p style="font-size: 16px; color: var(--text-muted); line-height: 1.7; margin-bottom: 32px;">We combine fluid GPU-rendered shader aesthetics with zero-latency B2B wholesale procurement across Vijayawada. Experience lightning-fast quotations, guaranteed stock replenishment, and immaculate enterprise branding.</p>
-        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-          <a href="#inquiry" class="btn-primary">Request Instant Quote ↗</a>
-          <a href="#products" class="btn-secondary">Explore Catalog Hub</a>
+  <!-- ========================================================
+       FOUNDER LEADERSHIP & INSTITUTIONAL CREDIBILITY SPOTLIGHT
+       Authentic Human Leadership Profile - K N S Enterprise
+       ======================================================== -->
+  <section class="section" id="founder" style="padding-top: 50px; padding-bottom: 30px;">
+    <div class="founder-card">
+      <div class="founder-grid">
+        <div class="founder-photo-col">
+          <div class="founder-frame">
+            <img src="likith_founder.jpg" alt="M. Likith - Founder & Commercial Director, K N S Enterprise" class="founder-img" loading="lazy">
+            <div class="founder-badge">
+              <span class="founder-badge-dot"></span>
+              <span>Active Wholesale Desk · Vijayawada</span>
+            </div>
+          </div>
+          <div class="founder-quick-contact">
+            <a href="https://wa.me/919494066186?text=Hello%20Likith%2C%20I%20would%20like%20to%20discuss%20an%20institutional%20procurement%20contract." target="_blank" rel="noopener" class="founder-wa-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.177.182-.076.356.101.174.449.741.964 1.201.662.591 1.221.774 1.394.861.173.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.174.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824z"/></svg>
+              Direct WhatsApp to Founder
+            </a>
+          </div>
+        </div>
+
+        <div class="founder-info-col">
+          <div class="founder-pill">Executive Leadership · Institutional Procurement</div>
+          <h2 class="founder-title">Direct Commercial Supply, Governed by Accountability &amp; Speed.</h2>
+          <p class="founder-statement">
+            "When hospitals like Rainbow Children’s and ESIC or national institutes like SPA Vijayawada rely on K N S Enterprise, they count on three uncompromising pillars: <strong>mill-certified authentic stock</strong>, <strong>transparent carton wholesale rates</strong>, and <strong>committed monthly replenishment</strong>. We eliminate procurement friction so your administration runs smoothly."
+          </p>
+
+          <div class="founder-meta">
+            <div class="founder-name">M. Likith</div>
+            <div class="founder-role">Founder &amp; Commercial Director · M/s K N S Enterprise</div>
+          </div>
+
+          <div class="credentials-grid">
+            <div class="cred-item">
+              <span class="cred-label">Registered GSTIN</span>
+              <span class="cred-val">37BNKPC6134P1ZK</span>
+            </div>
+            <div class="cred-item">
+              <span class="cred-label">Trade Entity</span>
+              <span class="cred-val">M/s K N S Enterprise</span>
+            </div>
+            <div class="cred-item">
+              <span class="cred-label">Central Warehouse</span>
+              <span class="cred-val">Ramachandra Nagar, Vijayawada</span>
+            </div>
+            <div class="cred-item">
+              <span class="cred-label">Delivery SLA</span>
+              <span class="cred-val">Free Vijayawada · Express AP Transit</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Catalog: pinned reel that slides sideways -->
-  <section class="pin" id="products" style="height:300svh">
-    <div class="stick reel-st">
-      <div class="reel-l">
-        <div class="sec-header">
-      <span>High-Performance Inventory</span>
-      <h2>Core Procurement Categories</h2>
-      <p>Tested for commercial durability, paper longevity, and heavy-duty industrial sanitation.</p>
-    </div>
-        <div class="reel-c"><span><b id="rcnt">01</b> / 03</span><span class="reel-b"><span id="rbar"></span></span></div>
-      </div>
-      <div id="track">
-      <!-- Card 1 -->
-      <div class="prod-card" data-category="stationery">
-        <div>
-          <div class="prod-img prod-art" role="img" aria-label="Office stationery products"><figure><svg viewBox="0 0 120 120" aria-hidden="true"><use href="#s-paper"/></svg><figcaption>Copier Paper</figcaption></figure><figure><svg viewBox="0 0 120 120" aria-hidden="true"><use href="#s-binder"/></svg><figcaption>Files &amp; Binders</figcaption></figure><figure><svg viewBox="0 0 120 120" aria-hidden="true"><use href="#s-books"/></svg><figcaption>Registers</figcaption></figure></div>
-          <h3>Office &amp; Corporate Stationery</h3>
-          <p>Comprehensive commercial paper, executive ledgers, filing systems, and custom printed corporate collateral.</p>
-          <ul class="prod-list">
-            <li>📄 Copier Paper (A4, A3, 70/75/80 GSM)</li>
-            <li>📁 Lever Arch Binders, Files &amp; Folders</li>
-            <li>📒 Ledgers, Registers &amp; Attendance Books</li>
-            <li>🖊️ Premium Pens, Markers &amp; Desk Sets</li>
-          </ul>
-        </div>
-        <a href="#inquiry" class="prod-btn" onclick="selectCategory('Office Stationery Supplies')">Request Stationery Quote ↗</a>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="prod-card" data-category="housekeeping">
-        <div>
-          <div class="prod-img prod-art" role="img" aria-label="Housekeeping products"><figure><svg viewBox="0 0 120 120" aria-hidden="true"><use href="#s-cleaner"/></svg><figcaption>Floor Cleaner</figcaption></figure><figure><svg viewBox="0 0 120 120" aria-hidden="true"><use href="#s-sanitizer"/></svg><figcaption>Hand Wash</figcaption></figure><figure><svg viewBox="0 0 120 120" aria-hidden="true"><use href="#s-mop"/></svg><figcaption>Mops &amp; Brooms</figcaption></figure></div>
-          <h3>Housekeeping &amp; Sanitation</h3>
-          <p>Heavy-duty commercial cleaning chemicals, washroom hygiene consumables, and industrial maintenance tools.</p>
-          <ul class="prod-list">
-            <li>🧼 Concentrated Floor Cleaners &amp; Disinfectants</li>
-            <li>✨ Glass Cleaners, Hand Wash &amp; Sanitizers</li>
-            <li>🧹 Microfiber Mops, Wipers &amp; Brooms</li>
-            <li>🧻 Tissue Rolls, C-Fold Towels &amp; Dispensers</li>
-          </ul>
-        </div>
-        <a href="#inquiry" class="prod-btn" onclick="selectCategory('Housekeeping & Cleaning Consumables')">Request Housekeeping Quote ↗</a>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="prod-card" data-category="contracts">
-        <div>
-          <div class="prod-img prod-art" role="img" aria-label="Institutional supply service"><figure><svg viewBox="0 0 120 120" aria-hidden="true"><use href="#s-crates"/></svg><figcaption>Bulk Supply</figcaption></figure><figure><svg viewBox="0 0 120 120" aria-hidden="true"><use href="#s-truck"/></svg><figcaption>Express Delivery</figcaption></figure><figure><svg viewBox="0 0 120 120" aria-hidden="true"><use href="#s-invoice"/></svg><figcaption>GST Invoice</figcaption></figure></div>
-          <h3>Institutional Supply Contracts</h3>
-          <p>Tailored bulk supply agreements for hospitals, colleges, tech parks, and government establishments.</p>
-          <ul class="prod-list">
-            <li>📅 Scheduled Monthly Corporate Restocking</li>
-            <li>💼 Dedicated Account Manager &amp; Priority Dispatch</li>
-            <li>🚚 Free Express Doorstep Delivery in Vijayawada</li>
-            <li>🧾 100% Tax-Compliant Commercial Invoicing</li>
-          </ul>
-        </div>
-        <a href="#inquiry" class="prod-btn" onclick="selectCategory('Institutional Contract / Monthly Supply')">Setup Institutional Contract ↗</a>
-      </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Products We Supply: each picture slot can be swapped for a real photo via data-photo="path/to/photo.jpg" -->
-  <section class="section" id="gallery" style="background: var(--bg-deep); border-top: 1px solid var(--border);">
+  <!-- ========================================================
+       HUMAN-CRAFTED B2B WHOLESALE CATALOG (Natural Smooth Scroll)
+       No Scroll-Jacking · Real Product Photography · Instant RFQ
+       ======================================================== -->
+  <section class="section" id="products" style="background: var(--bg-deep); border-top: 1px solid var(--border); padding-top: 70px; padding-bottom: 70px;">
     <div class="sec-header">
-      <span>What We Supply</span>
-      <h2>Products We Supply</h2>
-      <p>Office stationery and housekeeping consumables, supplied in bulk across Vijayawada &amp; Andhra Pradesh.</p>
+      <span>Institutional Wholesale Inventory</span>
+      <h2>Commercial Product Catalog</h2>
+      <p>Direct bulk supply of copier paper, office stationery, and housekeeping chemicals across Vijayawada &amp; Andhra Pradesh.</p>
     </div>
-    <div class="ptgrid">
-      <a class="pt" href="#inquiry" onclick="selectCategory('Office Stationery Supplies')">
-        <div class="pt-art" data-photo=""><svg viewBox="0 0 120 120" aria-hidden="true"><use href="#s-paper"/></svg></div>
-        <h4>Copier Paper</h4><p>A4 &amp; A3 · 70 / 75 / 80 GSM</p><span class="pt-q">Get a quote ↗</span>
-      </a>
-      <a class="pt" href="#inquiry" onclick="selectCategory('Office Stationery Supplies')">
-        <div class="pt-art" data-photo=""><svg viewBox="0 0 120 120" aria-hidden="true"><use href="#s-binder"/></svg></div>
-        <h4>Files &amp; Binders</h4><p>Lever arch binders, files &amp; folders</p><span class="pt-q">Get a quote ↗</span>
-      </a>
-      <a class="pt" href="#inquiry" onclick="selectCategory('Office Stationery Supplies')">
-        <div class="pt-art" data-photo=""><svg viewBox="0 0 120 120" aria-hidden="true"><use href="#s-books"/></svg></div>
-        <h4>Ledgers &amp; Registers</h4><p>Account books, registers &amp; attendance books</p><span class="pt-q">Get a quote ↗</span>
-      </a>
-      <a class="pt" href="#inquiry" onclick="selectCategory('Office Stationery Supplies')">
-        <div class="pt-art" data-photo=""><svg viewBox="0 0 120 120" aria-hidden="true"><use href="#s-pens"/></svg></div>
-        <h4>Pens &amp; Markers</h4><p>Premium pens, markers &amp; desk sets</p><span class="pt-q">Get a quote ↗</span>
-      </a>
-      <a class="pt" href="#inquiry" onclick="selectCategory('Housekeeping & Cleaning Consumables')">
-        <div class="pt-art" data-photo=""><svg viewBox="0 0 120 120" aria-hidden="true"><use href="#s-cleaner"/></svg></div>
-        <h4>Floor Cleaners &amp; Disinfectants</h4><p>Concentrated commercial grade</p><span class="pt-q">Get a quote ↗</span>
-      </a>
-      <a class="pt" href="#inquiry" onclick="selectCategory('Housekeeping & Cleaning Consumables')">
-        <div class="pt-art" data-photo=""><svg viewBox="0 0 120 120" aria-hidden="true"><use href="#s-sanitizer"/></svg></div>
-        <h4>Hand Wash &amp; Sanitizers</h4><p>Glass cleaners, hand wash &amp; sanitizers</p><span class="pt-q">Get a quote ↗</span>
-      </a>
-      <a class="pt" href="#inquiry" onclick="selectCategory('Housekeeping & Cleaning Consumables')">
-        <div class="pt-art" data-photo=""><svg viewBox="0 0 120 120" aria-hidden="true"><use href="#s-mop"/></svg></div>
-        <h4>Mops, Wipers &amp; Brooms</h4><p>Microfiber mops, wipers &amp; brooms</p><span class="pt-q">Get a quote ↗</span>
-      </a>
-      <a class="pt" href="#inquiry" onclick="selectCategory('Housekeeping & Cleaning Consumables')">
-        <div class="pt-art" data-photo=""><svg viewBox="0 0 120 120" aria-hidden="true"><use href="#s-tissue"/></svg></div>
-        <h4>Tissue Rolls &amp; Towels</h4><p>Tissue rolls, C-fold towels &amp; dispensers</p><span class="pt-q">Get a quote ↗</span>
-      </a>
+
+    <!-- Category Filter Tabs -->
+    <div class="catalog-filters" role="tablist" aria-label="Catalog categories">
+      <button class="cat-pill active" onclick="switchCatalog('all', this)" type="button">All Items (12)</button>
+      <button class="cat-pill" onclick="switchCatalog('paper', this)" type="button">Copier &amp; Bond Paper</button>
+      <button class="cat-pill" onclick="switchCatalog('stationery', this)" type="button">Office Stationery</button>
+      <button class="cat-pill" onclick="switchCatalog('housekeeping', this)" type="button">Housekeeping &amp; Disinfectants</button>
+      <button class="cat-pill" onclick="switchCatalog('hygiene', this)" type="button">Hygiene &amp; Washroom</button>
+    </div>
+
+    <!-- 12-Item Commercial Grid -->
+    <div class="catalog-grid" id="catalogGrid">
+      <!-- Item 1: JK Copier 75 GSM -->
+      <div class="catalog-card" data-cat="paper">
+        <div class="catalog-img-wrap">
+          <img src="https://images.unsplash.com/photo-1586075010923-2dd4570fb338?w=600&auto=format&fit=crop&q=80" alt="JK Copier Paper 75 GSM" class="catalog-img" loading="lazy">
+          <span class="catalog-badge">Top Seller</span>
+        </div>
+        <div class="catalog-body">
+          <div>
+            <div class="catalog-cat-tag">Copier Paper</div>
+            <h3>JK Copier Paper 75 GSM (A4)</h3>
+            <p class="catalog-desc">High-opacity 98% brightness multipurpose copier paper. Jam-free high-speed performance for laser printers, photocopiers, and digital presses.</p>
+          </div>
+          <div>
+            <div class="catalog-specs">
+              <div class="catalog-spec-row"><span class="catalog-spec-lbl">Pack Size:</span><span class="catalog-spec-val">Box of 10 Reams (5,000 Sheets)</span></div>
+              <div class="catalog-spec-row"><span class="catalog-spec-lbl">Minimum Order:</span><span class="catalog-spec-val">5 Boxes (Wholesale Tier)</span></div>
+            </div>
+            <a href="https://wa.me/919494066186?text=Hello%20K%20N%20S%20Enterprise%2C%20I%20would%20like%20a%20wholesale%20quote%20for%3A%20JK%20Copier%20Paper%2075%20GSM%20(A4)%20Box%20of%2010%20Reams." target="_blank" rel="noopener" class="btn-catalog-rfq">
+              <span>Request WhatsApp Quote ↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 2: Century Star 70 GSM -->
+      <div class="catalog-card" data-cat="paper">
+        <div class="catalog-img-wrap">
+          <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&auto=format&fit=crop&q=80" alt="Century Star Copier Paper 70 GSM" class="catalog-img" loading="lazy">
+          <span class="catalog-badge">Economical</span>
+        </div>
+        <div class="catalog-body">
+          <div>
+            <div class="catalog-cat-tag">Copier Paper</div>
+            <h3>Century Star Copier Paper 70 GSM (A4)</h3>
+            <p class="catalog-desc">Cost-effective high-volume institutional paper ideal for college exam cells, hospital lab reports, and administrative filing records.</p>
+          </div>
+          <div>
+            <div class="catalog-specs">
+              <div class="catalog-spec-row"><span class="catalog-spec-lbl">Pack Size:</span><span class="catalog-spec-val">Box of 10 Reams (5,000 Sheets)</span></div>
+              <div class="catalog-spec-row"><span class="catalog-spec-lbl">Minimum Order:</span><span class="catalog-spec-val">10 Boxes (Volume Rate)</span></div>
+            </div>
+            <a href="https://wa.me/919494066186?text=Hello%20K%20N%20S%20Enterprise%2C%20I%20would%20like%20a%20wholesale%20quote%20for%3A%20Century%20Star%20Copier%20Paper%2070%20GSM%20(A4)." target="_blank" rel="noopener" class="btn-catalog-rfq">
+              <span>Request WhatsApp Quote ↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 3: JK Sparkle Executive Bond 80 GSM -->
+      <div class="catalog-card" data-cat="paper">
+        <div class="catalog-img-wrap">
+          <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&auto=format&fit=crop&q=80" alt="JK Sparkle Executive Bond Paper 80 GSM" class="catalog-img" loading="lazy">
+          <span class="catalog-badge">Executive Grade</span>
+        </div>
+        <div class="catalog-body">
+          <div>
+            <div class="catalog-cat-tag">Copier Paper</div>
+            <h3>JK Sparkle Executive Bond Paper 80 GSM</h3>
+            <p class="catalog-desc">Heavyweight prestige bond paper engineered for formal executive correspondence, certificates, board resolutions, and legal documentation.</p>
+          </div>
+          <div>
+            <div class="catalog-specs">
+              <div class="catalog-spec-row"><span class="catalog-spec-lbl">Pack Size:</span><span class="catalog-spec-val">Box of 10 Reams</span></div>
+              <div class="catalog-spec-row"><span class="catalog-spec-lbl">Minimum Order:</span><span class="catalog-spec-val">3 Boxes</span></div>
+            </div>
+            <a href="https://wa.me/919494066186?text=Hello%20K%20N%20S%20Enterprise%2C%20I%20would%20like%20a%20wholesale%20quote%20for%3A%20JK%20Sparkle%20Executive%20Bond%20Paper%2080%20GSM." target="_blank" rel="noopener" class="btn-catalog-rfq">
+              <span>Request WhatsApp Quote ↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 4: Heavy Lever Arch Files -->
+      <div class="catalog-card" data-cat="stationery">
+        <div class="catalog-img-wrap">
+          <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=600&auto=format&fit=crop&q=80" alt="Heavy-Duty Lever Arch Box Files" class="catalog-img" loading="lazy">
+          <span class="catalog-badge">Hospital Favorite</span>
+        </div>
+        <div class="catalog-body">
+          <div>
+            <div class="catalog-cat-tag">Office Stationery</div>
+            <h3>Heavy-Duty Lever Arch Box Files (Calico Spine)</h3>
+            <p class="catalog-desc">Hardened greyboard with metal edge protectors, calibrated lever arch clip mechanism, finger ring, and index label pocket.</p>
+          </div>
+          <div>
+            <div class="catalog-specs">
+              <div class="catalog-spec-row"><span class="catalog-spec-lbl">Pack Size:</span><span class="catalog-spec-val">Carton of 20 Files</span></div>
+              <div class="catalog-spec-row"><span class="catalog-spec-lbl">Minimum Order:</span><span class="catalog-spec-val">50 Pieces</span></div>
+            </div>
+            <a href="https://wa.me/919494066186?text=Hello%20K%20N%20S%20Enterprise%2C%20I%20would%20like%20a%20wholesale%20quote%20for%3A%20Heavy-Duty%20Lever%20Arch%20Box%20Files." target="_blank" rel="noopener" class="btn-catalog-rfq">
+              <span>Request WhatsApp Quote ↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 5: Cobra Spring Files -->
+      <div class="catalog-card" data-cat="stationery">
+        <div class="catalog-img-wrap">
+          <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?w=600&auto=format&fit=crop&q=80" alt="Commercial Cobra Spring & Board Clip Files" class="catalog-img" loading="lazy">
+          <span class="catalog-badge">Academic Essential</span>
+        </div>
+        <div class="catalog-body">
+          <div>
+            <div class="catalog-cat-tag">Office Stationery</div>
+            <h3>Commercial Cobra Spring &amp; Board Clip Files</h3>
+            <p class="catalog-desc">Heavyweight laminated board with high-elasticity stainless steel spring wire fastener for daily student submissions and department records.</p>
+          </div>
+          <div>
+            <div class="catalog-specs">
+              <div class="catalog-spec-row"><span class="catalog-spec-lbl">Pack Size:</span><span class="catalog-spec-val">Pack of 50 Files</span></div>
+              <div class="catalog-spec-row"><span class="catalog-spec-lbl">Minimum Order:</span><span class="catalog-spec-val">100 Pieces</span></div>
+            </div>
+            <a href="https://wa.me/919494066186?text=Hello%20K%20N%20S%20Enterprise%2C%20I%20would%20like%20a%20wholesale%20quote%20for%3A%20Commercial%20Cobra%20Spring%20Files." target="_blank" rel="noopener" class="btn-catalog-rfq">
+              <span>Request WhatsApp Quote ↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 6: Kangaro Staplers & Pins -->
+      <div class="catalog-card" data-cat="stationery">
+        <div class="catalog-img-wrap">
+          <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=600&auto=format&fit=crop&q=80" alt="Kangaro Commercial Staplers & Pins" class="catalog-img" loading="lazy">
+          <span class="catalog-badge">Standard Spec</span>
+        </div>
+        <div class="catalog-body">
+          <div>
+            <div class="catalog-cat-tag">Office Stationery</div>
+            <h3>Kangaro Commercial Staplers &amp; Heavy Pins</h3>
+            <p class="catalog-desc">All-metal construction commercial desk staplers with jam-clearing mechanism and wholesale cartons of high-tensile steel staple pins (No. 10 / 24/6).</p>
+          </div>
+          <div>
+            <div class="catalog-specs">
+              <div class="catalog-spec-row"><span class="catalog-spec-lbl">Pack Size:</span><span class="catalog-spec-val">Pack of 10 Units + 50 Pin Boxes</span></div>
+              <div class="catalog-spec-row"><span class="catalog-spec-lbl">Minimum Order:</span><span class="catalog-spec-val">1 Bulk Pack</span></div>
+            </div>
+            <a href="https://wa.me/919494066186?text=Hello%20K%20N%20S%20Enterprise%2C%20I%20would%20like%20a%20wholesale%20quote%20for%3A%20Kangaro%20Staplers%20and%20Pins." target="_blank" rel="noopener" class="btn-catalog-rfq">
+              <span>Request WhatsApp Quote ↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 7: Commercial Floor Cleaner 5L -->
+      <div class="catalog-card" data-cat="housekeeping">
+        <div class="catalog-img-wrap">
+          <img src="https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=600&auto=format&fit=crop&q=80" alt="Commercial Floor Cleaner Concentrate 5L" class="catalog-img" loading="lazy">
+          <span class="catalog-badge">Active Clean</span>
+        </div>
+        <div class="catalog-body">
+          <div>
+            <div class="catalog-cat-tag">Housekeeping</div>
+            <h3>Commercial Floor Cleaner Concentrate (5 Litre Can)</h3>
+            <p class="catalog-desc">High-active surface formulation for hospital corridors, college labs, and corporate tiles. Streak-free shine with refreshing pine fragrance.</p>
+          </div>
+          <div>
+            <div class="catalog-specs">
+              <div class="catalog-spec-row"><span class="catalog-spec-lbl">Pack Size:</span><span class="catalog-spec-val">Can of 5 Litres (Box of 4 Cans)</span></div>
+              <div class="catalog-spec-row"><span class="catalog-spec-lbl">Minimum Order:</span><span class="catalog-spec-val">4 Cans (20 Litres)</span></div>
+            </div>
+            <a href="https://wa.me/919494066186?text=Hello%20K%20N%20S%20Enterprise%2C%20I%20would%20like%20a%20wholesale%20quote%20for%3A%20Commercial%20Floor%20Cleaner%20Concentrate%20(5L)." target="_blank" rel="noopener" class="btn-catalog-rfq">
+              <span>Request WhatsApp Quote ↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 8: Hospital Grade Disinfectant 5L -->
+      <div class="catalog-card" data-cat="housekeeping">
+        <div class="catalog-img-wrap">
+          <img src="https://images.unsplash.com/photo-1583947215259-38e31be8751f?w=600&auto=format&fit=crop&q=80" alt="Hospital-Grade Black & White Disinfectant" class="catalog-img" loading="lazy">
+          <span class="catalog-badge">NABH Compliant</span>
+        </div>
+        <div class="catalog-body">
+          <div>
+            <div class="catalog-cat-tag">Housekeeping</div>
+            <h3>Hospital-Grade Black &amp; White Disinfectant (5 Litres)</h3>
+            <p class="catalog-desc">High Rideal-Walker coefficient germicide formulated specifically for ward hygiene, clinical drainage sanitization, and heavy washrooms.</p>
+          </div>
+          <div>
+            <div class="catalog-specs">
+              <div class="catalog-spec-row"><span class="catalog-spec-lbl">Pack Size:</span><span class="catalog-spec-val">Can of 5 Litres</span></div>
+              <div class="catalog-spec-row"><span class="catalog-spec-lbl">Minimum Order:</span><span class="catalog-spec-val">4 Cans</span></div>
+            </div>
+            <a href="https://wa.me/919494066186?text=Hello%20K%20N%20S%20Enterprise%2C%20I%20would%20like%20a%20wholesale%20quote%20for%3A%20Hospital-Grade%20Disinfectant%20(5L)." target="_blank" rel="noopener" class="btn-catalog-rfq">
+              <span>Request WhatsApp Quote ↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 9: Liquid Handwash 5L -->
+      <div class="catalog-card" data-cat="housekeeping">
+        <div class="catalog-img-wrap">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&auto=format&fit=crop&q=80" alt="Institutional Liquid Handwash Concentrate 5L" class="catalog-img" loading="lazy">
+          <span class="catalog-badge">Refill Grade</span>
+        </div>
+        <div class="catalog-body">
+          <div>
+            <div class="catalog-cat-tag">Housekeeping</div>
+            <h3>Institutional Liquid Handwash Concentrate (5L Can)</h3>
+            <p class="catalog-desc">pH-balanced antibacterial hand wash for refillable wall dispensers. Moisturizing formula gentle on skin for frequent clinical and office use.</p>
+          </div>
+          <div>
+            <div class="catalog-specs">
+              <div class="catalog-spec-row"><span class="catalog-spec-lbl">Pack Size:</span><span class="catalog-spec-val">Can of 5 Litres</span></div>
+              <div class="catalog-spec-row"><span class="catalog-spec-lbl">Minimum Order:</span><span class="catalog-spec-val">4 Cans</span></div>
+            </div>
+            <a href="https://wa.me/919494066186?text=Hello%20K%20N%20S%20Enterprise%2C%20I%20would%20like%20a%20wholesale%20quote%20for%3A%20Liquid%20Handwash%20Concentrate%20(5L)." target="_blank" rel="noopener" class="btn-catalog-rfq">
+              <span>Request WhatsApp Quote ↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 10: Spin Mops & Buckets -->
+      <div class="catalog-card" data-cat="housekeeping">
+        <div class="catalog-img-wrap">
+          <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&auto=format&fit=crop&q=80" alt="Microfiber Industrial Spin Mops" class="catalog-img" loading="lazy">
+          <span class="catalog-badge">Heavy Duty</span>
+        </div>
+        <div class="catalog-body">
+          <div>
+            <div class="catalog-cat-tag">Housekeeping</div>
+            <h3>Microfiber Industrial Spin Mops &amp; Heavy Buckets</h3>
+            <p class="catalog-desc">Heavy-duty dual bucket with stainless steel wringer basket and telescopic stainless steel rod. Includes 2 high-absorbency microfiber heads.</p>
+          </div>
+          <div>
+            <div class="catalog-specs">
+              <div class="catalog-spec-row"><span class="catalog-spec-lbl">Pack Size:</span><span class="catalog-spec-val">Set of 5 Complete Units</span></div>
+              <div class="catalog-spec-row"><span class="catalog-spec-lbl">Minimum Order:</span><span class="catalog-spec-val">5 Sets</span></div>
+            </div>
+            <a href="https://wa.me/919494066186?text=Hello%20K%20N%20S%20Enterprise%2C%20I%20would%20like%20a%20wholesale%20quote%20for%3A%20Industrial%20Spin%20Mops%20and%20Buckets." target="_blank" rel="noopener" class="btn-catalog-rfq">
+              <span>Request WhatsApp Quote ↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 11: Facial Tissues 2-Ply -->
+      <div class="catalog-card" data-cat="hygiene">
+        <div class="catalog-img-wrap">
+          <img src="https://images.unsplash.com/photo-1584556812952-905ffd0c611a?w=600&auto=format&fit=crop&q=80" alt="Virgin Pulp 2-Ply Facial Tissue Boxes" class="catalog-img" loading="lazy">
+          <span class="catalog-badge">Executive Grade</span>
+        </div>
+        <div class="catalog-body">
+          <div>
+            <div class="catalog-cat-tag">Hygiene &amp; Washroom</div>
+            <h3>Virgin Pulp 2-Ply Facial Tissue Boxes (100 Pulls)</h3>
+            <p class="catalog-desc">100% virgin wood pulp, ultra-soft, lint-free absorbent tissues for executive desk suites, hospital consultation rooms, and board rooms.</p>
+          </div>
+          <div>
+            <div class="catalog-specs">
+              <div class="catalog-spec-row"><span class="catalog-spec-lbl">Pack Size:</span><span class="catalog-spec-val">Carton of 36 Pop-up Boxes</span></div>
+              <div class="catalog-spec-row"><span class="catalog-spec-lbl">Minimum Order:</span><span class="catalog-spec-val">1 Carton (36 Boxes)</span></div>
+            </div>
+            <a href="https://wa.me/919494066186?text=Hello%20K%20N%20S%20Enterprise%2C%20I%20would%20like%20a%20wholesale%20quote%20for%3A%202-Ply%20Facial%20Tissue%20Boxes." target="_blank" rel="noopener" class="btn-catalog-rfq">
+              <span>Request WhatsApp Quote ↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 12: C-Fold Paper Towels -->
+      <div class="catalog-card" data-cat="hygiene">
+        <div class="catalog-img-wrap">
+          <img src="https://images.unsplash.com/photo-1577937927133-66ef06acdf18?w=600&auto=format&fit=crop&q=80" alt="C-Fold / M-Fold Washroom Paper Towels" class="catalog-img" loading="lazy">
+          <span class="catalog-badge">Hygienic Dispense</span>
+        </div>
+        <div class="catalog-body">
+          <div>
+            <div class="catalog-cat-tag">Hygiene &amp; Washroom</div>
+            <h3>C-Fold / M-Fold Washroom Paper Towels</h3>
+            <p class="catalog-desc">High wet-strength embossed disposable paper towels for touchless wall dispensers. Reduces washroom maintenance and cross-contamination.</p>
+          </div>
+          <div>
+            <div class="catalog-specs">
+              <div class="catalog-spec-row"><span class="catalog-spec-lbl">Pack Size:</span><span class="catalog-spec-val">Carton of 16 Packs (2,400 Sheets)</span></div>
+              <div class="catalog-spec-row"><span class="catalog-spec-lbl">Minimum Order:</span><span class="catalog-spec-val">2 Cartons</span></div>
+            </div>
+            <a href="https://wa.me/919494066186?text=Hello%20K%20N%20S%20Enterprise%2C%20I%20would%20like%20a%20wholesale%20quote%20for%3A%20C-Fold%20Washroom%20Paper%20Towels." target="_blank" rel="noopener" class="btn-catalog-rfq">
+              <span>Request WhatsApp Quote ↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Order path: drawn as you scroll -->
-  <section class="pin" id="process" style="height:340svh;background:var(--bg-surface);border-top:1px solid var(--border)" aria-labelledby="pt">
-    <div class="stick" id="flow">
-      <div class="sec-header" style="text-align:left;margin:0"><span>How It Works</span><h2 id="pt">Your order, drawn step by step.</h2><p style="margin:6px 0 0">Order journey <b id="fpc" style="color:#fff">0%</b></p></div>
-      <div style="flex:1;min-height:0;display:flex;align-items:center">
-        <svg class="fs" viewBox="0 0 1200 440" role="img" aria-label="Your order in four steps: share your requirement, get a quotation, confirm the order, doorstep delivery.">
-          <path d="M70 330C260 70 440 70 610 230S950 410 1130 130" fill="none" stroke="#fff" stroke-opacity=".12" stroke-width="2" stroke-dasharray="3 7"/>
-          <path id="fpath" d="M70 330C260 70 440 70 610 230S950 410 1130 130" pathLength="1" fill="none" stroke="#d4af37" stroke-width="3" stroke-linecap="round" stroke-dasharray="1 1" stroke-dashoffset="1"/>
-          <g id="fnodes" font-family="Plus Jakarta Sans,Arial" font-size="15" font-weight="700" fill="#94a3b8" text-anchor="middle"></g>
-          <g id="fdot"><circle r="16" fill="#d4af37" opacity=".25"/><circle r="6" fill="#fff"/></g>
-        </svg>
+  <!-- ========================================================
+       STREAMLINED 4-STEP INSTITUTIONAL PROCUREMENT FLOW
+       Human, Natural Reading Flow · No Forced Viewport Pinning
+       ======================================================== -->
+  <section class="section" id="process" style="background: var(--bg-surface); border-top: 1px solid var(--border); padding-top: 70px; padding-bottom: 70px;">
+    <div class="sec-header">
+      <span>Operational SLA</span>
+      <h2>How We Supply Your Institution</h2>
+      <p>Transparent, audit-ready commercial procurement workflow from requirement list to doorstep dispatch.</p>
+    </div>
+
+    <div class="steps-container">
+      <div class="step-card">
+        <div>
+          <div class="step-num">01</div>
+          <h3>Share Requirement</h3>
+          <p>Send your monthly procurement list for copier paper, office stationery, or housekeeping supplies via our RFQ form or direct WhatsApp.</p>
+        </div>
+        <div class="step-tag">Step 1: Requirement Submission</div>
       </div>
-      <div class="fc"><span style="font-size:11px;font-weight:800;color:var(--gold);letter-spacing:.2em;text-transform:uppercase" id="fn">Step 1 / 4</span><div aria-live="polite"><h3 id="ft">Share Your Requirement</h3><p id="fb">Send your list through the form or WhatsApp.</p></div></div>
+
+      <div class="step-card">
+        <div>
+          <div class="step-num">02</div>
+          <h3>30-Minute Formal Quote</h3>
+          <p>Receive an itemized wholesale estimate with tiered volume pricing and 100% GST-compliant tax calculations.</p>
+        </div>
+        <div class="step-tag">Step 2: Quotation SLA</div>
+      </div>
+
+      <div class="step-card">
+        <div>
+          <div class="step-num">03</div>
+          <h3>PO &amp; Batch Allocation</h3>
+          <p>Confirm brands and carton quantities. Your dedicated account representative reserves batch stock at our warehouse.</p>
+        </div>
+        <div class="step-tag">Step 3: Order Confirmation</div>
+      </div>
+
+      <div class="step-card">
+        <div>
+          <div class="step-num">04</div>
+          <h3>Express Doorstep Delivery</h3>
+          <p>Free delivery across Vijayawada, Guntur, and institutional zones with signed delivery chalans and commercial invoices.</p>
+        </div>
+        <div class="step-tag">Step 4: Doorstep Dispatch</div>
+      </div>
     </div>
   </section>
 
@@ -1180,7 +1838,7 @@
     </div>
     <div class="footer-bottom">
       <div>&copy; 2026 K N S Enterprise. All rights reserved.</div>
-      <div>Designed with Next-Gen Neural Graphics &amp; Pure Code</div>
+      <div>M/s K N S Enterprise &middot; GSTIN: 37BNKPC6134P1ZK &middot; Vijayawada, Andhra Pradesh</div>
     </div>
   </footer>
 
@@ -1224,46 +1882,54 @@ function hero(){var q=pin(H),p=q.p;if(q.r.bottom<0||Math.abs(p-lh)<.00005)return
  var ci=ease(range(p,.54,.72)),co=range(p,.86,1);
  HC.style.opacity=ci*(1-co);HC.style.transform='translate3d(0,'+((1-ci)*30-co*80)+'px,0) scale('+lerp(.94,1,ci)+')';HC.style.pointerEvents=(ci>.5&&co<.4)?'auto':'none'}
 
-/* Catalog reel */
+/* Catalog reel & process safe guards */
 var R=$('#products'),tr=$('#track'),cards=$$('#track .prod-card'),rb=$('#rbar'),rc=$('#rcnt'),lr=-1;
-function reel(){var q=pin(R),p=q.p;if(q.r.bottom<0||q.r.top>q.vh||Math.abs(p-lr)<.00005)return;lr=p;
+function reel(){if(!R||!tr)return;var q=pin(R),p=q.p;if(q.r.bottom<0||q.r.top>q.vh||Math.abs(p-lr)<.00005)return;lr=p;
  var vw=innerWidth,k=range(p,.04,.96),travel=Math.max(0,tr.offsetLeft+tr.scrollWidth-vw*.94),nearest=0,best=9;
  tr.style.transform='translate3d('+(-k*travel)+'px,0,0)';
  cards.forEach(function(c,i){var b=c.getBoundingClientRect(),off=(b.left+b.width/2-vw*.62)/vw,a=clamp(Math.abs(off)*1.6);
   c.style.opacity=1-a*.55;c.style.transform='scale('+(1-a*.07)+')';if(Math.abs(off)<best){best=Math.abs(off);nearest=i}});
- rb.style.transform='scaleX('+k+')';rc.textContent='0'+(nearest+1)}
+ if(rb)rb.style.transform='scaleX('+k+')';if(rc)rc.textContent='0'+(nearest+1)}
 
 /* Order path */
-var F=$('#process'),P=$('#fpath'),dot=$('#fdot'),nd=$('#fnodes'),fpc=$('#fpc'),fn=$('#fn'),ft=$('#ft'),fb=$('#fb'),lf=-1,cur=-1,len=P.getTotalLength(),circ=[];
-var steps=[['Share Your Requirement','Send your list through the form or WhatsApp.','Requirement'],['Get Your Quotation','Quotations are shared within 30 minutes during business hours.','Quotation'],['Confirm the Order','Approve the items, brands and quantities.','Order'],['Doorstep Delivery','Free express delivery across Vijayawada.','Delivered']];
-var html='';steps.forEach(function(st,i){var pt=P.getPointAtLength(len*i/3);html+='<circle id="nc'+i+'" cx="'+pt.x+'" cy="'+pt.y+'" r="11" fill="#071410" stroke="#d4af37" stroke-width="3"/><text x="'+pt.x+'" y="'+(pt.y+(i===1?-26:38))+'">'+st[2]+'</text>'});
-nd.innerHTML=html;steps.forEach(function(st,i){circ.push($('#nc'+i))});
-function flow(){var q=pin(F),p=q.p;if(q.r.bottom<0||q.r.top>q.vh||Math.abs(p-lf)<.00005)return;lf=p;
+var F=$('#process'),P=$('#fpath'),dot=$('#fdot'),nd=$('#fnodes'),fpc=$('#fpc'),fn=$('#fn'),ft=$('#ft'),fb=$('#fb'),lf=-1,cur=-1,len=0,circ=[];
+if(P&&P.getTotalLength){
+  try {
+    len=P.getTotalLength();
+    var steps=[['Share Your Requirement','Send your list through the form or WhatsApp.','Requirement'],['Get Your Quotation','Quotations are shared within 30 minutes during business hours.','Quotation'],['Confirm the Order','Approve the items, brands and quantities.','Order'],['Doorstep Delivery','Free express delivery across Vijayawada.','Delivered']];
+    var html='';steps.forEach(function(st,i){var pt=P.getPointAtLength(len*i/3);html+='<circle id="nc'+i+'" cx="'+pt.x+'" cy="'+pt.y+'" r="11" fill="#071410" stroke="#d4af37" stroke-width="3"/><text x="'+pt.x+'" y="'+(pt.y+(i===1?-26:38))+'">'+st[2]+'</text>'});
+    if(nd)nd.innerHTML=html;steps.forEach(function(st,i){circ.push($('#nc'+i))});
+  }catch(e){}
+}
+function flow(){if(!F||!P||!len)return;var q=pin(F),p=q.p;if(q.r.bottom<0||q.r.top>q.vh||Math.abs(p-lf)<.00005)return;lf=p;
  var k=range(p,.06,.92),pt=P.getPointAtLength(len*k),idx=Math.min(3,Math.floor(k*3+.02));
- P.style.strokeDashoffset=1-k;dot.setAttribute('transform','translate('+pt.x+' '+pt.y+')');fpc.textContent=Math.round(k*100)+'%';
- circ.forEach(function(c,i){c.setAttribute('fill',k>=i/3-.001?'#d4af37':'#071410')});
- if(idx!==cur){cur=idx;fn.textContent='Step '+(idx+1)+' / 4';ft.textContent=steps[idx][0];fb.textContent=steps[idx][1]}}
+ P.style.strokeDashoffset=1-k;if(dot)dot.setAttribute('transform','translate('+pt.x+' '+pt.y+')');if(fpc)fpc.textContent=Math.round(k*100)+'%';
+ circ.forEach(function(c,i){if(c)c.setAttribute('fill',k>=i/3-.001?'#d4af37':'#071410')});
+ if(idx!==cur&&fn&&ft&&fb){cur=idx;fn.textContent='Step '+(idx+1)+' / 4';ft.textContent=steps[idx][0];fb.textContent=steps[idx][1]}}
 
 var pb=$('#pb');
-function loop(t){if(lenis)lenis.raf(t);var h=document.documentElement.scrollHeight-innerHeight;pb.style.transform='scaleX('+(h>0?clamp(scrollY/h):0)+')';
+function loop(t){if(lenis)lenis.raf(t);var h=document.documentElement.scrollHeight-innerHeight;if(pb)pb.style.transform='scaleX('+(h>0?clamp(scrollY/h):0)+')';
  for(var i=counters.length-1;i>=0;i--){var c=counters[i],k=ease(Math.min(1,(t-c.t0)/1400));c.el.textContent=Math.round(c.n*k)+c.suf;if(k>=1)counters.splice(i,1)}
- hero();reel();flow();requestAnimationFrame(loop)}
+ if(H)hero();if(R&&tr)reel();if(F&&P&&len)flow();requestAnimationFrame(loop)}
 requestAnimationFrame(loop);
 })();
 
-// Catalog Filter Function
-    function filterCatalog(category, event) {
-      document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-      event.target.classList.add('active');
+// B2B Catalog Dynamic Filter Function
+function switchCatalog(category, el) {
+  document.querySelectorAll('.cat-pill').forEach(function(btn){ btn.classList.remove('active'); });
+  if (el) el.classList.add('active');
 
-      document.querySelectorAll('.prod-card').forEach(card => {
-        if (category === 'all' || card.getAttribute('data-category') === category) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
-      });
+  document.querySelectorAll('.catalog-card').forEach(function(card){
+    if (category === 'all' || card.getAttribute('data-cat') === category) {
+      card.style.display = 'flex';
+    } else {
+      card.style.display = 'none';
     }
+  });
+}
+function filterCatalog(category, event) {
+  switchCatalog(category, event ? event.target : null);
+}
 
     // Pre-select Category in Form
     function selectCategory(categoryName) {
