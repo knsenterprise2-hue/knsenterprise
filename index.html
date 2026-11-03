@@ -1096,8 +1096,10 @@
         <p>Submit your requirements below or connect directly with our wholesale desk in Vijayawada. We deliver formal estimates within 30 minutes.</p>
         <div style="display: flex; gap: 20px; flex-wrap: wrap;">
           <div style="background: var(--bg-deep); border: 1px solid var(--border-gold); padding: 16px 24px; border-radius: 16px;">
-            <div style="font-size: 11px; color: var(--gold); text-transform: uppercase; font-weight: 800; letter-spacing: 0.1em;">Direct Phone</div>
-            <div style="font-size: 16px; font-weight: 700; color: #fff; margin-top: 4px;">+91 94940 66186</div>
+            <div style="font-size: 11px; color: var(--gold); text-transform: uppercase; font-weight: 800; letter-spacing: 0.1em;">Direct Phone &amp; WhatsApp</div>
+            <div style="font-size: 15px; font-weight: 700; color: #fff; margin-top: 4px;">
+              <a href="tel:+919494066186" style="color: #fff; text-decoration: none;">+91 94940 66186</a> &middot; <a href="tel:+919160877373" style="color: var(--gold); text-decoration: none;">+91 91608 77373</a>
+            </div>
           </div>
           <div style="background: var(--bg-deep); border: 1px solid var(--border); padding: 16px 24px; border-radius: 16px;">
             <div style="font-size: 11px; color: var(--text-muted); text-transform: uppercase; font-weight: 800; letter-spacing: 0.1em;">Email Desk</div>
@@ -1173,7 +1175,7 @@
       </div>
       <div class="footer-col">
         <h3>Direct Communication</h3>
-        <p>Phone / WhatsApp: <a href="tel:+919494066186" style="color: var(--gold); text-decoration: underline;" onclick="showToast('Phone number copied!')">+91 94940 66186</a></p>
+        <p>Phone / WhatsApp: <a href="tel:+919494066186" style="color: var(--gold); text-decoration: underline;" onclick="showToast('Primary copied!')">+91 94940 66186</a> / <a href="tel:+919160877373" style="color: var(--gold); text-decoration: underline;" onclick="showToast('Secondary copied!')">+91 91608 77373</a></p>
         <p>Email: knsenterprise2@gmail.com</p>
         <p>Business Hours: Mon - Sat (9:00 AM - 7:00 PM)</p>
       </div>
@@ -1405,7 +1407,7 @@ document.querySelectorAll('.pt-art[data-photo]').forEach(function(el){
 </section>
 <script>
 (function(){
-  var WA='919494066186', PHONE='+91 94940 66186', MAIL='knsenterprise2@gmail.com', GST='37BNKPC6134P1ZK';
+  var WA='919494066186', WA2='919160877373', PHONE='+91 94940 66186 / +91 91608 77373', MAIL='knsenterprise2@gmail.com', GST='37BNKPC6134P1ZK';
   var ADDR='D. No: 60-3-12, Sri Ramachandra Nagar Road, Ramachandranagaram, Vijayawada, Andhra Pradesh - 520008';
   var $=function(id){return document.getElementById(id)};
   var panel=$('kagent'),btn=$('kagent-btn'),tip=$('kagent-tip'),msgs=$('ka-msgs'),quick=$('ka-quick'),form=$('ka-form'),inp=$('ka-in');
@@ -1471,7 +1473,7 @@ document.querySelectorAll('.pt-art[data-photo]').forEach(function(el){
     if(e&&e.k.indexOf('quote')>-1&&/(i want|i need|give me|send|please)/.test(low)&&low.split(' ').length<8)return startQuote();
     if(e)return reply(e);
     say('I am not sure about that one. For a quick, exact answer please message our team. '+HOURS,['Get a quote','Contact'],function(){actions([{t:'Ask on WhatsApp',href:waLink('Hello K N S Enterprise, '+text),cls:'wa'}])})}
-  function reply(e){say(e.a,e.q,e.wa?function(){actions([{t:'Chat on WhatsApp',href:waLink('Hello K N S Enterprise, I have a question.'),cls:'wa'},{t:'Call now',href:'tel:+919494066186'}])}:null)}
+  function reply(e){say(e.a,e.q,e.wa?function(){actions([{t:'Chat on WhatsApp',href:waLink('Hello K N S Enterprise, I have a question.'),cls:'wa'},{t:'Call 9494066186',href:'tel:+919494066186'},{t:'Call 9160877373',href:'tel:+919160877373'}])}:null)}
 
   /* ---------- open / close ---------- */
   var greeted=false;
