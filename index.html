@@ -640,20 +640,14 @@
   .lenis.lenis-smooth { scroll-behavior: auto !important; }
   #pb { position: fixed; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--gold), var(--gold-light)); transform: scaleX(0); transform-origin: left; z-index: 1100; }
   .pin { position: relative; }
-  .stick { position: sticky; top: 0; height: 100svh; overflow: hidden; }
-  .lyr { position: absolute; inset: 0; will-change: transform; }
-  .lyr svg { width: 100%; height: 100%; display: block; }
-  .apron { position: absolute; left: 0; right: 0; top: 100%; height: 110vh; background: var(--bg-deep); }
-  #veil { position: absolute; inset: 0; z-index: 6; pointer-events: none; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; text-align: center; background: radial-gradient(60% 50% at 30% 40%, rgba(150,170,160,.35), transparent 70%), radial-gradient(50% 60% at 75% 60%, rgba(212,175,55,.18), transparent 70%), radial-gradient(80% 80% at 50% 50%, rgba(3,8,6,.88), rgba(3,8,6,.97)); }
-  #veil b { font-size: 13px; letter-spacing: .5em; margin-right: -.5em; font-weight: 700; color: #fff; }
-  #veil span { font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); font-weight: 700; }
-  .ab { animation: bn 1.6s infinite; font-style: normal; color: var(--gold); }
-  @keyframes bn { 50% { transform: translateY(6px); } }
-  #hTitle { position: absolute; left: 0; right: 0; top: 20%; text-align: center; padding: 0 16px; pointer-events: none; opacity: 0; z-index: 4; }
-  #hTitle h2 { margin: 0 -0.2em 0 0; font-family: 'Syne', sans-serif; font-size: clamp(1.7rem, 7vw, 5.6rem); line-height: 1; font-weight: 800; color: #fff; text-shadow: 0 4px 40px rgba(0,0,0,.6); }
-  #hTitle p { margin: 16px 0 0; font-size: 12px; letter-spacing: .22em; text-transform: uppercase; color: var(--gold-light); font-weight: 700; }
-  #hCard { position: absolute; inset: 0; z-index: 5; display: flex; align-items: center; justify-content: center; padding: 96px 20px 24px; opacity: 0; pointer-events: none; }
-  #hCard .hero-card { margin: 0; }
+  .stick { position: relative; min-height: 90vh; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+  .lyr { position: absolute; inset: 0; pointer-events: none; opacity: 0.65; }
+  .lyr svg { width: 100%; height: 100%; display: block; object-fit: cover; }
+  .apron { display: none; }
+  #veil { display: none !important; }
+  #hTitle { display: none !important; }
+  #hCard { position: relative; z-index: 5; display: flex; align-items: center; justify-content: center; padding: 110px 20px 40px; opacity: 1 !important; pointer-events: auto !important; width: 100%; }
+  #hCard .hero-card { margin: 0 auto; opacity: 1 !important; }
   [data-rv]:not(.in) { opacity: 0; }
   [data-rv].in { animation: rvIn 1s cubic-bezier(.2,.7,.1,1) backwards; }
   @keyframes rvIn { from { opacity: 0; transform: translate3d(0, 24px, 0); } }
@@ -1139,6 +1133,7 @@
       <nav class="nav-links">
         <a href="#products">Catalog</a>
         <a href="#process">How It Works</a>
+        <a href="#founder">Leadership</a>
         <a href="#faq">FAQ</a>
         <a href="#inquiry">Instant Quote</a>
         <a href="https://wa.me/919494066186?text=Hello%20K%20N%20S%20Enterprise" class="nav-btn" target="_blank" rel="noopener">WhatsApp Direct ↗</a>
@@ -1146,8 +1141,8 @@
     </div>
   </header>
 
-  <!-- Pinned layered hero: one scene, six layers, each moving at its own rate -->
-  <section class="pin" id="hero" style="height:320svh" aria-label="K N S Enterprise">
+  <!-- Pinned layered hero: one scene, responsive view -->
+  <section class="pin" id="hero" aria-label="K N S Enterprise">
     <div class="stick">
       <div class="lyr" id="Ls"><svg viewBox="0 0 1200 700" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><defs><linearGradient id="gs" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#020604"/><stop offset=".55" stop-color="#071410"/><stop offset="1" stop-color="#14382b"/></linearGradient></defs><rect width="1200" height="700" fill="url(#gs)"/><g fill="#fde047" opacity=".6"><circle cx="110" cy="80" r="1.6"/><circle cx="260" cy="150" r="1.2"/><circle cx="420" cy="60" r="1.5"/><circle cx="780" cy="90" r="1.3"/><circle cx="930" cy="170" r="1.6"/><circle cx="1090" cy="70" r="1.2"/><circle cx="640" cy="40" r="1"/><circle cx="1150" cy="200" r="1.3"/></g></svg></div>
       <div class="lyr" id="Lsun"><svg viewBox="0 0 1200 700" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><defs><radialGradient id="gg"><stop offset=".5" stop-color="#d4af37" stop-opacity=".5"/><stop offset="1" stop-color="#d4af37" stop-opacity="0"/></radialGradient></defs><circle cx="600" cy="520" r="310" fill="url(#gg)"/><circle cx="600" cy="520" r="170" fill="#d4af37"/><circle cx="600" cy="520" r="205" fill="none" stroke="#d4af37" stroke-opacity=".35"/><circle cx="600" cy="520" r="245" fill="none" stroke="#d4af37" stroke-opacity=".2"/></svg></div>
@@ -1169,7 +1164,6 @@
         </div>
       </div>
       </div>
-      <div id="veil"><span>Next-Gen Institutional Supply</span><b>SCROLL TO BEGIN</b><i class="ab">↓</i></div>
     </div>
   </section>
 
@@ -1754,8 +1748,10 @@
         <p>Submit your requirements below or connect directly with our wholesale desk in Vijayawada. We deliver formal estimates within 30 minutes.</p>
         <div style="display: flex; gap: 20px; flex-wrap: wrap;">
           <div style="background: var(--bg-deep); border: 1px solid var(--border-gold); padding: 16px 24px; border-radius: 16px;">
-            <div style="font-size: 11px; color: var(--gold); text-transform: uppercase; font-weight: 800; letter-spacing: 0.1em;">Direct Phone</div>
-            <div style="font-size: 16px; font-weight: 700; color: #fff; margin-top: 4px;">+91 94940 66186</div>
+            <div style="font-size: 11px; color: var(--gold); text-transform: uppercase; font-weight: 800; letter-spacing: 0.1em;">Direct Phone &amp; WhatsApp</div>
+            <div style="font-size: 15px; font-weight: 700; color: #fff; margin-top: 4px;">
+              <a href="tel:+919494066186" style="color: #fff; text-decoration: none;">+91 94940 66186</a> &middot; <a href="tel:+919160877373" style="color: var(--gold); text-decoration: none;">+91 91608 77373</a>
+            </div>
           </div>
           <div style="background: var(--bg-deep); border: 1px solid var(--border); padding: 16px 24px; border-radius: 16px;">
             <div style="font-size: 11px; color: var(--text-muted); text-transform: uppercase; font-weight: 800; letter-spacing: 0.1em;">Email Desk</div>
@@ -1831,7 +1827,7 @@
       </div>
       <div class="footer-col">
         <h3>Direct Communication</h3>
-        <p>Phone / WhatsApp: <a href="tel:+919494066186" style="color: var(--gold); text-decoration: underline;" onclick="showToast('Phone number copied!')">+91 94940 66186</a></p>
+        <p>Phone / WhatsApp: <a href="tel:+919494066186" style="color: var(--gold); text-decoration: underline;" onclick="showToast('Primary copied!')">+91 94940 66186</a> / <a href="tel:+919160877373" style="color: var(--gold); text-decoration: underline;" onclick="showToast('Secondary copied!')">+91 91608 77373</a></p>
         <p>Email: knsenterprise2@gmail.com</p>
         <p>Business Hours: Mon - Sat (9:00 AM - 7:00 PM)</p>
       </div>
@@ -1867,20 +1863,10 @@ var counters=[],cio=new IntersectionObserver(function(en){en.forEach(function(x)
 $$('.metric-num').forEach(function(el){var t=el.textContent.trim(),m=t.match(/^(\d+)(.*)$/);if(!m||t.indexOf('/')>-1||reduce)return;el._c={el:el,n:+m[1],suf:m[2],t0:0};el.textContent='0'+m[2];cio.observe(el)});
 
 /* Hero */
-var H=$('#hero'),V=$('#veil'),T=$('#hTitle'),HC=$('#hCard'),L={sky:$('#Ls'),sun:$('#Lsun'),far:$('#Lfar'),near:$('#Lnear'),front:$('#Lfront')},lh=-1;
-function set(el,y,s,o){el.style.transform='translate3d(0,'+y+'vh,0) scale('+(s===undefined?1:s)+')';el.style.opacity=o===undefined?1:o}
-function hero(){var q=pin(H),p=q.p;if(q.r.bottom<0||Math.abs(p-lh)<.00005)return;lh=p;
- var exit=range(p,.78,1),vc=range(p,0,.15),settle=ease(range(p,0,.5));
- V.style.opacity=1-vc;V.style.transform='translate3d(0,'+(-vc*24)+'vh,0) scale('+(1+vc*.25)+')';
- set(L.sky,lerp(0,-6,p),lerp(1.12,1,settle));
- var rise=ease(range(p,.04,.5));set(L.sun,lerp(38,0,rise)-exit*12,lerp(.92,1,rise));
- set(L.far,lerp(10,0,settle)-exit*26);
- var n=ease(range(p,.28,.58));set(L.near,lerp(30,0,n)-exit*44,1,clamp(n*2));
- var f=ease(range(p,.34,.6));set(L.front,lerp(36,0,f)-exit*72);
- var ti=ease(range(p,.08,.26)),to=range(p,.46,.56);
- T.style.opacity=ti*(1-to);T.querySelector('h2').style.letterSpacing=lerp(.5,.18,ti)+'em';T.style.transform='translate3d(0,'+(-p*6)+'vh,0)';T.style.filter=ti<.99?'blur('+((1-ti)*10)+'px)':'';
- var ci=ease(range(p,.54,.72)),co=range(p,.86,1);
- HC.style.opacity=ci*(1-co);HC.style.transform='translate3d(0,'+((1-ci)*30-co*80)+'px,0) scale('+lerp(.94,1,ci)+')';HC.style.pointerEvents=(ci>.5&&co<.4)?'auto':'none'}
+var H=$('#hero'),T=$('#hTitle'),HC=$('#hCard'),L={sky:$('#Ls'),sun:$('#Lsun'),far:$('#Lfar'),near:$('#Lnear'),front:$('#Lfront')};
+function hero(){
+ if(HC){HC.style.opacity='1';HC.style.pointerEvents='auto';}
+}
 
 /* Catalog reel & process safe guards */
 var R=$('#products'),tr=$('#track'),cards=$$('#track .prod-card'),rb=$('#rbar'),rc=$('#rcnt'),lr=-1;
@@ -2071,7 +2057,7 @@ document.querySelectorAll('.pt-art[data-photo]').forEach(function(el){
 </section>
 <script>
 (function(){
-  var WA='919494066186', PHONE='+91 94940 66186', MAIL='knsenterprise2@gmail.com', GST='37BNKPC6134P1ZK';
+  var WA='919494066186', WA2='919160877373', PHONE='+91 94940 66186 / +91 91608 77373', MAIL='knsenterprise2@gmail.com', GST='37BNKPC6134P1ZK';
   var ADDR='D. No: 60-3-12, Sri Ramachandra Nagar Road, Ramachandranagaram, Vijayawada, Andhra Pradesh - 520008';
   var $=function(id){return document.getElementById(id)};
   var panel=$('kagent'),btn=$('kagent-btn'),tip=$('kagent-tip'),msgs=$('ka-msgs'),quick=$('ka-quick'),form=$('ka-form'),inp=$('ka-in');
@@ -2137,7 +2123,7 @@ document.querySelectorAll('.pt-art[data-photo]').forEach(function(el){
     if(e&&e.k.indexOf('quote')>-1&&/(i want|i need|give me|send|please)/.test(low)&&low.split(' ').length<8)return startQuote();
     if(e)return reply(e);
     say('I am not sure about that one. For a quick, exact answer please message our team. '+HOURS,['Get a quote','Contact'],function(){actions([{t:'Ask on WhatsApp',href:waLink('Hello K N S Enterprise, '+text),cls:'wa'}])})}
-  function reply(e){say(e.a,e.q,e.wa?function(){actions([{t:'Chat on WhatsApp',href:waLink('Hello K N S Enterprise, I have a question.'),cls:'wa'},{t:'Call now',href:'tel:+919494066186'}])}:null)}
+  function reply(e){say(e.a,e.q,e.wa?function(){actions([{t:'Chat on WhatsApp',href:waLink('Hello K N S Enterprise, I have a question.'),cls:'wa'},{t:'Call 9494066186',href:'tel:+919494066186'},{t:'Call 9160877373',href:'tel:+919160877373'}])}:null)}
 
   /* ---------- open / close ---------- */
   var greeted=false;
