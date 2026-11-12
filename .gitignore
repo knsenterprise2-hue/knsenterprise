@@ -1,0 +1,4 @@
+*.png
+.claude/
+screenshot_*.png
+preview_*.png
