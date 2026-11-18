@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KNS Enterprise — Wholesale Institutional Supply</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.prod.website-files.com/gsap/3.15.0/gsap.min.js"></script>
+<script src="https://cdn.prod.website-files.com/gsap/3.15.0/ScrollTrigger.min.js"></script>
+<script src="https://cdn.prod.website-files.com/gsap/3.15.0/SplitText.min.js"></script>
+<script src="logo.js"></script>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:    #F0F8FC;
+  --navy:  #0D2759;
+  --blue:  #214895;
+  --mid:   #4D82C4;
+  --white: #FFFFFF;
+  --frost: rgba(255,255,255,0.72);
+  --bdr:   rgba(13,39,89,0.1);
+  --text:  #0D2759;
+  --muted: #5A7BA8;
+}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:Inter,sans-serif;
+  overflow-x:hidden;
+}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 5vw;height:68px;
+  background:rgba(240,248,252,0.9);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--bdr);
+}
+.nav-logo{height:38px;display:block;object-fit:contain}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{
+  font-size:13px;font-weight:500;
+  color:var(--muted);text-decoration:none;
+  letter-spacing:0.2px;transition:color .2s;
+}
+.nav-links a:hover{color:var(--navy)}
+.nav-cta{
+  display:flex;align-items:center;gap:8px;
+  background:var(--navy);color:#fff;
+  font-size:12.5px;font-weight:600;
+  padding:9px 20px;border-radius:999px;
+  text-decoration:none;transition:opacity .2s;
+  white-space:nowrap;
+}
+.nav-cta:hover{opacity:.85}
+
+/* ── HERO ── */
+.hero{
+  min-height:100svh;
+  display:flex;flex-direction:column;
+  justify-content:center;
+  padding:68px 5vw 0;
+  position:relative;overflow:hidden;
+}
+
+/* Big ambient circle — same visual language as Dairy Food BG clouds */
+.hero-circle{
+  position:absolute;
+  right:-10vw;top:50%;transform:translateY(-50%);
+  width:min(700px,60vw);height:min(700px,60vw);
+  border-radius:50%;
+  background:radial-gradient(circle at 40% 40%,
+    rgba(77,130,196,0.18) 0%,
+    rgba(33,72,149,0.08) 50%,
+    transparent 75%);
+  animation:pulse 8s ease-in-out infinite;
+  pointer-events:none;
+}
+@keyframes pulse{
+  0%,100%{transform:translateY(-50%) scale(1)}
+  50%{transform:translateY(-50%) scale(1.06)}
+}
+
+.hero-inner{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:6vw;
+  max-width:1400px;
+  margin:0 auto;
+  width:100%;
+  padding:80px 0 100px;
+}
+
+/* Hero left — BIG text like Dairy Food BG */
+.hero-left{position:relative;z-index:2}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:11px;font-weight:600;letter-spacing:2px;
+  text-transform:uppercase;color:var(--mid);
+  margin-bottom:28px;
+  opacity:0;
+}
+.hero-eyebrow::before{
+  content:'';width:28px;height:1.5px;
+  background:var(--mid);flex-shrink:0;
+}
+
+/* THE BIG HEADLINE — Dairy Food BG uses massive fluid display type */
+.hero-h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(52px,6.5vw,96px);
+  font-weight:700;
+  line-height:1.08;
+  letter-spacing:-0.02em;
+  color:var(--navy);
+  margin-bottom:28px;
+  overflow:hidden;
+}
+.hero-h1 em{
+  font-style:normal;
+  color:var(--blue);
+}
+
+.hero-sub{
+  font-size:clamp(14px,1.1vw,17px);
+  line-height:1.7;
+  color:var(--muted);
+  max-width:440px;
+  margin-bottom:40px;
+  opacity:0;
+}
+
+.hero-btns{
+  display:flex;gap:14px;flex-wrap:wrap;
+  opacity:0;
+}
+.btn-fill{
+  background:var(--navy);color:#fff;
+  font-size:13px;font-weight:600;
+  padding:14px 28px;border-radius:10px;
+  text-decoration:none;
+  transition:background .2s,transform .15s;
+  display:inline-flex;align-items:center;gap:8px;
+}
+.btn-fill:hover{background:var(--blue);transform:translateY(-1px)}
+.btn-ghost{
+  background:transparent;
+  border:1.5px solid var(--bdr);
+  color:var(--navy);
+  font-size:13px;font-weight:500;
+  padding:13px 26px;border-radius:10px;
+  text-decoration:none;transition:border-color .2s;
+}
+.btn-ghost:hover{border-color:var(--navy)}
+
+/* Hero right — 3D stage */
+.hero-right{
+  position:relative;z-index:2;
+  display:flex;flex-direction:column;
+  align-items:center;
+}
+.stage-bg{
+  position:absolute;
+  width:110%;height:110%;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(77,130,196,0.12) 0%,transparent 70%);
+  animation:pulse2 6s ease-in-out infinite;
+  pointer-events:none;
+}
+@keyframes pulse2{
+  0%,100%{transform:scale(1)}50%{transform:scale(1.05)}
+}
+.stage{
+  position:relative;
+  width:min(420px,40vw);
+  height:min(420px,40vw);
+  cursor:grab;
+}
+.stage:active{cursor:grabbing}
+#cv{
+  width:100%;height:100%;
+  border-radius:24px;
+  display:block;
+}
+
+/* Drag badge — exact Dairy Food BG style */
+.drag-badge{
+  position:absolute;
+  bottom:-18px;left:50%;transform:translateX(-50%);
+  display:flex;align-items:center;gap:8px;
+  background:var(--white);
+  border:1px solid var(--bdr);
+  border-radius:999px;
+  padding:7px 18px;
+  font-size:11.5px;font-weight:600;
+  color:var(--muted);
+  box-shadow:0 6px 20px rgba(13,39,89,0.08);
+  white-space:nowrap;
+}
+.drag-dot{
+  width:8px;height:8px;border-radius:50%;
+  background:var(--mid);animation:blink 2s ease-in-out infinite;
+}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+
+.play-btn{
+  position:absolute;top:12px;right:12px;
+  width:34px;height:34px;border-radius:50%;
+  background:rgba(255,255,255,.9);
+  border:1px solid var(--bdr);
+  box-shadow:0 2px 10px rgba(13,39,89,.1);
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;font-size:12px;color:var(--navy);
+  user-select:none;transition:background .2s;
+}
+.play-btn:hover{background:#fff}
+
+/* Product pills */
+.prod-pills{
+  display:flex;gap:8px;margin-top:44px;flex-wrap:wrap;justify-content:center;
+}
+.pp{
+  padding:8px 20px;border-radius:999px;
+  border:1.5px solid var(--bdr);background:transparent;
+  font-size:12px;font-weight:600;color:var(--muted);
+  cursor:pointer;transition:all .2s;font-family:Inter,sans-serif;
+}
+.pp.on,.pp:hover{
+  background:var(--navy);color:#fff;border-color:var(--navy);
+}
+
+/* ── SECTION: Products ── */
+.section{padding:100px 5vw;max-width:1400px;margin:0 auto}
+.section-tag{
+  font-size:11px;font-weight:600;letter-spacing:2px;
+  text-transform:uppercase;color:var(--mid);
+  margin-bottom:16px;display:block;
+}
+.section-h{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(32px,3.8vw,54px);
+  font-weight:700;line-height:1.15;
+  color:var(--navy);margin-bottom:56px;
+  max-width:600px;
+}
+
+.prod-tabs{display:flex;gap:8px;margin-bottom:40px;flex-wrap:wrap}
+.pt{
+  padding:8px 20px;border-radius:999px;
+  border:1.5px solid var(--bdr);background:transparent;
+  font-size:12px;font-weight:600;color:var(--muted);
+  cursor:pointer;transition:all .2s;font-family:Inter,sans-serif;
+}
+.pt.on,.pt:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.card{
+  background:var(--frost);
+  border:1px solid var(--bdr);
+  border-radius:18px;padding:28px 22px;
+  backdrop-filter:blur(16px);
+  transition:transform .3s,box-shadow .3s;
+  opacity:0;transform:translateY(32px);
+}
+.card:hover{transform:translateY(-6px);box-shadow:0 20px 48px rgba(13,39,89,.1)}
+.card-ico{
+  width:50px;height:50px;border-radius:12px;font-size:22px;
+  background:rgba(77,130,196,.1);border:1px solid rgba(77,130,196,.2);
+  display:flex;align-items:center;justify-content:center;margin-bottom:18px;
+}
+.card h3{font-size:15px;font-weight:600;color:var(--navy);margin-bottom:8px}
+.card p{font-size:12.5px;color:var(--muted);line-height:1.65}
+.card-tag{
+  margin-top:16px;padding-top:14px;
+  border-top:1px solid var(--bdr);
+  font-size:10px;font-weight:700;
+  color:var(--mid);letter-spacing:.8px;
+}
+
+/* ── DARK SECTION — Packaging ── */
+.dark-section{
+  background:var(--navy);
+  padding:100px 5vw;
+}
+.dark-inner{max-width:1400px;margin:0 auto}
+.dark-section .section-tag{color:var(--mid)}
+.dark-section .section-h{color:#fff}
+.pack-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:960px}
+.pkc{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:18px;padding:32px 26px;
+  transition:background .2s;
+}
+.pkc:hover{background:rgba(255,255,255,.11)}
+.pkc .pico{font-size:32px;margin-bottom:20px}
+.pkc h3{font-size:16px;font-weight:600;color:#fff;margin-bottom:10px}
+.pkc p{font-size:13px;color:rgba(255,255,255,.48);line-height:1.65}
+.pkc .badge{
+  margin-top:20px;display:inline-block;
+  background:rgba(77,130,196,.22);color:#7EB3E8;
+  font-size:10.5px;font-weight:700;
+  padding:4px 14px;border-radius:999px;
+  border:1px solid rgba(77,130,196,.35);
+}
+
+/* ── TRUST ── */
+.trust-section{padding:80px 5vw}
+.trust-inner{
+  max-width:1400px;margin:0 auto;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+}
+.tc{
+  background:var(--white);border:1px solid var(--bdr);
+  border-radius:18px;padding:32px 26px;
+  opacity:0;transform:translateY(28px);
+}
+.tc .ticon{font-size:28px;margin-bottom:16px}
+.tc h3{font-size:15px;font-weight:600;color:var(--navy);margin-bottom:8px}
+.tc p{font-size:13px;color:var(--muted);line-height:1.6}
+
+/* ── FOOTER CTA ── */
+.cta-section{
+  background:var(--navy);
+  padding:120px 5vw;text-align:center;
+}
+.cta-section h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(36px,4.5vw,62px);
+  font-weight:700;color:#fff;
+  line-height:1.15;margin-bottom:18px;
+  opacity:0;transform:translateY(28px);
+}
+.cta-section p{
+  font-size:16px;color:rgba(255,255,255,.5);
+  margin-bottom:44px;
+  opacity:0;transform:translateY(28px);
+}
+.cta-btns{display:flex;gap:14px;justify-content:center;opacity:0}
+.btn-white{
+  background:#fff;color:var(--navy);
+  font-size:13px;font-weight:700;
+  padding:14px 28px;border-radius:10px;
+  text-decoration:none;transition:opacity .2s;
+}
+.btn-white:hover{opacity:.9}
+.btn-outline-w{
+  background:transparent;
+  border:1.5px solid rgba(255,255,255,.25);
+  color:#fff;font-size:13px;font-weight:500;
+  padding:13px 26px;border-radius:10px;
+  text-decoration:none;transition:border-color .2s;
+}
+.btn-outline-w:hover{border-color:rgba(255,255,255,.6)}
+
+/* ── FOOTER ── */
+footer{
+  padding:28px 5vw;
+  border-top:1px solid var(--bdr);
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:12px;color:var(--muted);
+  background:var(--bg);
+}
+footer img{height:30px;object-fit:contain}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <img class="nav-logo" id="nl" src="" alt="KNS Enterprise">
+  <ul class="nav-links">
+    <li><a href="#products">Products</a></li>
+    <li><a href="#packaging">Packaging</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a class="nav-cta" href="https://wa.me/919160877373?text=Hi%20KNS%20Enterprise,%20I%20need%20bulk%20institutional%20quotation" target="_blank">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    WhatsApp +91 9160877373
+  </a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-circle"></div>
+  <div class="hero-inner">
+    <!-- Left: Big text -->
+    <div class="hero-left">
+      <span class="hero-eyebrow">Vijayawada &middot; Est. 2010</span>
+      <h1 class="hero-h1" id="h1">
+        Elevate your<br>
+        <em>institution's</em><br>
+        supply chain.
+      </h1>
+      <p class="hero-sub">Direct wholesale stationery, certified housekeeping chemicals &amp; facility manpower for hospitals, colleges &amp; corporate offices across Andhra Pradesh.</p>
+      <div class="hero-btns">
+        <a class="btn-fill" href="https://wa.me/919160877373?text=Hi,%20I%20need%20KNS%20Enterprise%20institutional%20bulk%20quotation" target="_blank">
+          &#x26A1; Request Quote on WhatsApp
+        </a>
+        <a class="btn-ghost" href="file:///E:/Desktop/KNS_ENTERPRISE_MASTER_CATALOGUE_2026.pdf" target="_blank">
+          View Catalogue 2026
+        </a>
+      </div>
+    </div>
+
+    <!-- Right: 3D Stage -->
+    <div class="hero-right">
+      <div class="stage-bg"></div>
+      <div class="stage" id="si">
+        <canvas id="cv" width="840" height="840"></canvas>
+        <div class="play-btn" id="pb">&#9646;&#9646;</div>
+        <div class="drag-badge">
+          <div class="drag-dot"></div>
+          Drag to rotate
+        </div>
+      </div>
+      <div class="prod-pills">
+        <button class="pp on" data-i="0">&#x1F4C4; A4 Paper</button>
+        <button class="pp" data-i="1">&#x1F4C2; Box File</button>
+        <button class="pp" data-i="2">&#x1F9EA; 5L Canister</button>
+        <button class="pp" data-i="3">&#x1F9F9; Facility Kit</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<div class="section" id="products">
+  <span class="section-tag">What we supply</span>
+  <h2 class="section-h">Products we supply<br>under your account</h2>
+  <div class="prod-tabs">
+    <button class="pt on" onclick="ft(event,'all')">All Products</button>
+    <button class="pt" onclick="ft(event,'s')">Stationery</button>
+    <button class="pt" onclick="ft(event,'h')">Housekeeping</button>
+    <button class="pt" onclick="ft(event,'m')">Manpower</button>
+  </div>
+  <div class="cards" id="cg">
+    <div class="card" data-c="s"><div class="card-ico">&#x1F4C4;</div><h3>A4 Copier Paper 75 GSM</h3><p>JK Copier, Century Star &amp; Bilt Matrix. 500 sheets/ream, 5 reams/carton. Zero jam guaranteed.</p><div class="card-tag">MILL-DIRECT &middot; 12% GST</div></div>
+    <div class="card" data-c="s"><div class="card-ico">&#x1F4C2;</div><h3>Executive Lever Arch Files</h3><p>Heavy-duty hardboard, chrome finger-ring, rust-free lever clip &amp; printed spine index.</p><div class="card-tag">INSTITUTIONAL BULK &middot; 18% GST</div></div>
+    <div class="card" data-c="s"><div class="card-ico">&#x1F4D3;</div><h3>Registers &amp; Ledger Books</h3><p>Cash books, stock registers, attendance &amp; patient records. 100&ndash;500 page options.</p><div class="card-tag">PRINTED TO SPEC &middot; 12% GST</div></div>
+    <div class="card" data-c="s"><div class="card-ico">&#x1F58A;&#xFE0F;</div><h3>Ball Pens &amp; Desk Sets</h3><p>Cello Gripper, Linc Glycer &amp; Reynolds bulk pens. Custom logo printing available.</p><div class="card-tag">CARTON PRICING &middot; 18% GST</div></div>
+    <div class="card" data-c="h"><div class="card-ico">&#x1F9EA;</div><h3>5L Floor Disinfectant</h3><p>1:50 dilution ratio. 99.9% bacterial kill. Hospital &amp; school certified concentrate.</p><div class="card-tag">FACTORY DIRECT &middot; 18% GST</div></div>
+    <div class="card" data-c="h"><div class="card-ico">&#x1F9F9;</div><h3>Mops, Wipers &amp; Cloths</h3><p>Aluminium squeegee, loop-end microfiber mop, color-coded 400g microfiber cloths.</p><div class="card-tag">WAREHOUSE STOCK &middot; 18% GST</div></div>
+    <div class="card" data-c="h"><div class="card-ico">&#x1F5D1;&#xFE0F;</div><h3>Garbage Bags &amp; Bin Liners</h3><p>Blue/black/red HDPE &amp; LDPE. 15L to 120L hospital bio-waste colour coding.</p><div class="card-tag">VOLUME TIERED &middot; 18% GST</div></div>
+    <div class="card" data-c="m"><div class="card-ico">&#x1F3E2;</div><h3>Facility Housekeeping Staff</h3><p>Verified, uniformed, trained personnel for hospitals, colleges &amp; corporate offices.</p><div class="card-tag">ON-DEMAND DEPLOYMENT</div></div>
+  </div>
+</div>
+
+<!-- PACKAGING / ORDERING -->
+<section class="dark-section" id="packaging">
+  <div class="dark-inner">
+    <span class="section-tag">Flexible ordering</span>
+    <h2 class="section-h">Built to scale<br>with your institution.</h2>
+    <div class="pack-grid">
+      <div class="pkc"><div class="pico">&#x1F4E6;</div><h3>Single Unit / Ream</h3><p>Emergency replacement or item trial. No minimum order. Same-day dispatch from Vijayawada warehouse.</p><span class="badge">STANDARD RATE</span></div>
+      <div class="pkc"><div class="pico">&#x1F4EB;</div><h3>Master Carton (5&ndash;10 Units)</h3><p>Standard monthly institutional replenishment. Priority dispatch with dedicated account manager.</p><span class="badge">SAVE UP TO 12%</span></div>
+      <div class="pkc"><div class="pico">&#x1F3ED;</div><h3>Full Pallet / Annual Contract</h3><p>Scheduled deliveries, price-lock &amp; Zoho Books GST invoice compliance for hospitals &amp; colleges.</p><span class="badge">SAVE UP TO 22%</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<div class="trust-section" id="contact">
+  <div class="trust-inner">
+    <div class="tc"><div class="ticon">&#x1F69A;</div><h3>24-Hour Corridor Dispatch</h3><p>Vijayawada, Guntur, Eluru, Tenali, Ibrahimpatnam &amp; Vuyyuru. Direct from regional warehouse.</p></div>
+    <div class="tc"><div class="ticon">&#x1F9FE;</div><h3>100% GST Compliant Billing</h3><p>Exact HSN code invoices via Zoho Books (Org 60044349672). Zero math errors guaranteed.</p></div>
+    <div class="tc"><div class="ticon">&#x1F91D;</div><h3>165+ Active Institutions</h3><p>Hospitals, engineering colleges, government offices &amp; corporate parks across AP &amp; Telangana.</p></div>
+  </div>
+</div>
+
+<!-- FOOTER CTA -->
+<section class="cta-section">
+  <h2 class="ch">Ready to bring your<br>institution to scale?</h2>
+  <p class="cp">Send requirements on WhatsApp &mdash; formal GST quotation within 2 hours.</p>
+  <div class="cta-btns ca">
+    <a class="btn-white" href="https://wa.me/919160877373?text=Hi%20Sunil,%20I%20need%20KNS%20bulk%20quotation" target="_blank">&#x1F4AC; WhatsApp +91 9160877373</a>
+    <a class="btn-outline-w" href="tel:+919494066186">&#x1F4DE; Call +91 9494066186</a>
+  </div>
+</section>
+
+<footer>
+  <img id="fl" src="" alt="KNS Enterprise">
+  <span>&copy; 2026 KNS Enterprise, Vijayawada &middot; Wholesale Stationery &amp; Housekeeping</span>
+  <span>Powered by N.I.N.O AI</span>
+</footer>
+
+<script>
+// Logo
+if(typeof KL!=='undefined'){
+  document.getElementById('nl').src=KL;
+  document.getElementById('fl').src=KL;
+}
+
+// GSAP
+gsap.registerPlugin(ScrollTrigger,SplitText);
+gsap.to('.hero-eyebrow',{opacity:1,y:0,duration:.7,delay:.4,ease:'power2.out'});
+var sp=new SplitText('#h1',{type:'lines',linesClass:'hline'});
+gsap.from(sp.lines,{yPercent:105,opacity:0,stagger:.13,duration:1,delay:.55,ease:'power3.out'});
+gsap.to('.hero-sub',{opacity:1,y:0,duration:.7,delay:1.1,ease:'power2.out'});
+gsap.to('.hero-btns',{opacity:1,y:0,duration:.7,delay:1.25,ease:'power2.out'});
+
+// Scroll reveals
+gsap.from('.section-h',{opacity:0,y:30,duration:.8,ease:'power2.out',scrollTrigger:{trigger:'.section-h',start:'top 88%'}});
+document.querySelectorAll('.card').forEach(function(el,i){
+  gsap.to(el,{opacity:1,y:0,duration:.65,delay:i*.07,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 91%'}});
+});
+document.querySelectorAll('.tc').forEach(function(el,i){
+  gsap.to(el,{opacity:1,y:0,duration:.65,delay:i*.1,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 88%'}});
+});
+['.ch','.cp','.ca'].forEach(function(s,i){
+  gsap.to(s,{opacity:1,y:0,duration:.7,delay:i*.12,ease:'power2.out',scrollTrigger:{trigger:s,start:'top 88%'}});
+});
+
+// Tab filter
+function ft(e,cat){
+  document.querySelectorAll('.pt').forEach(function(p){p.classList.remove('on')});
+  e.target.classList.add('on');
+  document.querySelectorAll('.card').forEach(function(c){
+    c.style.display=(cat==='all'||c.dataset.c===cat)?'':'none';
+  });
+}
+
+// ── 3D Canvas ──
+(function(){
+  var cv=document.getElementById('cv'),ctx=cv.getContext('2d');
+  var W=cv.width,H=cv.height;
+  var prods=[
+    {lbl:'A4 Copier 75 GSM', shape:'ream', ac:'#214895'},
+    {lbl:'Executive Box File',shape:'file', ac:'#C5A040'},
+    {lbl:'5L Disinfectant',  shape:'can',  ac:'#1a7a50'},
+    {lbl:'Facility Kit',     shape:'mop',  ac:'#4D82C4'}
+  ];
+  var cur=0,ry=0.42,rx=0.12,autoR=true,drag=false,lx=0,ly=0;
+
+  function pt(x,y,z){
+    var cy=Math.cos(ry),sy=Math.sin(ry),cx=Math.cos(rx),sx=Math.sin(rx);
+    var x1=x*cy+z*sy, z1=-x*sy+z*cy;
+    var y1=y*cx-z1*sx, z2=y*sx+z1*cx;
+    var f=640/(640+z2+200);
+    return{x:W/2+x1*f, y:H/2+y1*f, f:f, z2:z2};
+  }
+  function face(vs,fill,stroke){
+    var pts=vs.map(function(v){return pt(v[0],v[1],v[2])});
+    return{pts:pts,fill:fill,stroke:stroke,avgZ:pts.reduce(function(s,p){return s+p.z2},0)/pts.length};
+  }
+  function drawFaces(fs){
+    fs.sort(function(a,b){return a.avgZ-b.avgZ}).forEach(function(f){
+      ctx.beginPath();ctx.moveTo(f.pts[0].x,f.pts[0].y);
+      f.pts.slice(1).forEach(function(p){ctx.lineTo(p.x,p.y)});
+      ctx.closePath();ctx.fillStyle=f.fill;ctx.fill();
+      ctx.strokeStyle=f.stroke;ctx.lineWidth=1.5;ctx.stroke();
+    });
+  }
+  function shadow(cx,cy,r){
+    var g=ctx.createRadialGradient(cx,cy,0,cx,cy,r);
+    g.addColorStop(0,'rgba(13,39,89,.14)');g.addColorStop(1,'rgba(13,39,89,0)');
+    ctx.save();ctx.scale(1,.2);
+    ctx.beginPath();ctx.ellipse(cx,cy*5,r,r,0,0,Math.PI*2);
+    ctx.fillStyle=g;ctx.fill();ctx.restore();
+  }
+  function pill(text,x,y){
+    ctx.font='600 18px Inter,sans-serif';
+    var tw=ctx.measureText(text).width+40;
+    ctx.beginPath();ctx.roundRect(x-tw/2,y-16,tw,32,16);
+    ctx.fillStyle='rgba(255,255,255,.92)';
+    ctx.shadowColor='rgba(13,39,89,.1)';ctx.shadowBlur=12;ctx.fill();
+    ctx.shadowBlur=0;ctx.strokeStyle='rgba(13,39,89,.1)';ctx.lineWidth=1;ctx.stroke();
+    ctx.fillStyle=prods[cur].ac;ctx.textAlign='center';ctx.fillText(text,x,y+6);
+  }
+
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    var p=prods[cur];
+
+    if(p.shape==='ream'){
+      var bw=240,bh=80,bd=330;
+      shadow(W/2,H/2+120,180);
+      drawFaces([
+        face([[-bw/2,-bh/2,bd/2],[bw/2,-bh/2,bd/2],[bw/2,bh/2,bd/2],[-bw/2,bh/2,bd/2]],'#FAFCFF','#C8D5E8'),
+        face([[-bw/2,-bh/2,-bd/2],[bw/2,-bh/2,-bd/2],[bw/2,bh/2,-bd/2],[-bw/2,bh/2,-bd/2]],'#D4DFF0','#A8BACC'),
+        face([[-bw/2,-bh/2,-bd/2],[bw/2,-bh/2,-bd/2],[bw/2,-bh/2,bd/2],[-bw/2,-bh/2,bd/2]],'#EBF2FF','#C8D5E8'),
+        face([[-bw/2,bh/2,-bd/2],[bw/2,bh/2,-bd/2],[bw/2,bh/2,bd/2],[-bw/2,bh/2,bd/2]],'#C8D5E8','#A8BACC'),
+        face([[-bw/2,-bh/2,-bd/2],[-bw/2,-bh/2,bd/2],[-bw/2,bh/2,bd/2],[-bw/2,bh/2,-bd/2]],'#C0CEDF','#A8BACC'),
+        face([[bw/2,-bh/2,-bd/2],[bw/2,-bh/2,bd/2],[bw/2,bh/2,bd/2],[bw/2,bh/2,-bd/2]],'#C8D5E8','#A8BACC')
+      ]);
+      // Brand label on front face
+      var fp=[pt(-bw/2,-bh/2,bd/2),pt(bw/2,-bh/2,bd/2),pt(bw/2,bh/2,bd/2),pt(-bw/2,bh/2,bd/2)];
+      var mx=(fp[0].x+fp[1].x+fp[2].x+fp[3].x)/4, my=(fp[0].y+fp[1].y+fp[2].y+fp[3].y)/4;
+      ctx.save();ctx.textAlign='center';
+      ctx.font='bold 28px Inter';ctx.fillStyle=p.ac;ctx.fillText('JK COPIER',mx,my-10);
+      ctx.font='500 17px Inter';ctx.fillStyle='rgba(33,72,149,.45)';ctx.fillText('A4 \u00b7 75 GSM \u00b7 500 Sheets',mx,my+18);
+      ctx.restore();
+
+    } else if(p.shape==='file'){
+      var bw=190,bh=300,bd=90;
+      shadow(W/2,H/2+175,130);
+      drawFaces([
+        face([[-bw/2,-bh/2,bd/2],[bw/2,-bh/2,bd/2],[bw/2,bh/2,bd/2],[-bw/2,bh/2,bd/2]],'#1E2D40','#C5A040'),
+        face([[bw/2,-bh/2,-bd/2],[bw/2,-bh/2,bd/2],[bw/2,bh/2,bd/2],[bw/2,bh/2,-bd/2]],'#122030','#C5A040'),
+        face([[-bw/2,-bh/2,-bd/2],[bw/2,-bh/2,-bd/2],[bw/2,-bh/2,bd/2],[-bw/2,-bh/2,bd/2]],'#1A2E45','#C5A040'),
+        face([[-bw/2,-bh/2,-bd/2],[bw/2,-bh/2,-bd/2],[bw/2,bh/2,-bd/2],[-bw/2,bh/2,-bd/2]],'#0D1B2A','#C5A040'),
+        face([[-bw/2,-bh/2,-bd/2],[-bw/2,-bh/2,bd/2],[-bw/2,bh/2,bd/2],[-bw/2,bh/2,-bd/2]],'#122030','#C5A040'),
+        face([[-bw/2,bh/2,-bd/2],[bw/2,bh/2,-bd/2],[bw/2,bh/2,bd/2],[-bw/2,bh/2,bd/2]],'#0D1B2A','#C5A040')
+      ]);
+      var rp=pt(bw/2+12,0,0);
+      ctx.beginPath();ctx.arc(rp.x,rp.y,22*rp.f,0,Math.PI*2);
+      ctx.strokeStyle=p.ac;ctx.lineWidth=7*rp.f;ctx.stroke();
+      ctx.strokeStyle='#F0E0C0';ctx.lineWidth=2.5*rp.f;ctx.stroke();
+      var fp=[pt(-bw/2,-bh/2,bd/2),pt(bw/2,-bh/2,bd/2),pt(bw/2,bh/2,bd/2),pt(-bw/2,bh/2,bd/2)];
+      var mx=(fp[0].x+fp[1].x+fp[2].x+fp[3].x)/4, my=(fp[0].y+fp[1].y+fp[2].y+fp[3].y)/4;
+      ctx.save();ctx.textAlign='center';
+      ctx.font='bold 26px Inter';ctx.fillStyle=p.ac;ctx.fillText('KNS',mx,my-16);
+      ctx.font='500 15px Inter';ctx.fillStyle='rgba(197,160,64,.75)';ctx.fillText('EXECUTIVE BOX FILE',mx,my+8);
+      ctx.restore();
+
+    } else if(p.shape==='can'){
+      var r=105,h=310;
+      shadow(W/2,H/2+h/2+20,r*1.2);
+      var tp=pt(0,-h/2,0),bp=pt(0,h/2,0),lp=pt(-r,0,0),rp=pt(r,0,0);
+      var ww=Math.abs(rp.x-lp.x),bx=(lp.x+rp.x)/2,ew=ww/2,eh=ww*.19;
+      var g=ctx.createLinearGradient(bx-ww/2,0,bx+ww/2,0);
+      g.addColorStop(0,'#6BB89A');g.addColorStop(.35,'#E8F5EE');g.addColorStop(1,'#4FA07E');
+      ctx.beginPath();
+      ctx.ellipse(bx,tp.y,ew,eh,0,Math.PI,0);
+      ctx.lineTo(rp.x,bp.y);
+      ctx.ellipse(bx,bp.y,ew,eh,0,0,Math.PI);
+      ctx.lineTo(lp.x,tp.y);
+      ctx.fillStyle=g;ctx.fill();ctx.strokeStyle=p.ac;ctx.lineWidth=2;ctx.stroke();
+      ctx.beginPath();ctx.ellipse(bx,tp.y,ew,eh,0,0,Math.PI*2);
+      ctx.fillStyle='#C0E8D2';ctx.fill();ctx.strokeStyle=p.ac;ctx.stroke();
+      ctx.beginPath();ctx.ellipse(bx+ew*.3,tp.y-eh*1.2,ew*.15,eh*.85,0,0,Math.PI*2);
+      ctx.fillStyle=p.ac;ctx.fill();
+      ctx.beginPath();ctx.arc(bx-ew*.5,tp.y+eh*1.6,ew*.4,Math.PI*.85,Math.PI*2.15);
+      ctx.strokeStyle='rgba(197,160,64,.6)';ctx.lineWidth=9;ctx.stroke();
+      var midY=(tp.y+bp.y)/2;
+      ctx.save();ctx.textAlign='center';
+      ctx.font='bold 24px Inter';ctx.fillStyle='#0D5534';ctx.fillText('5L DISINFECTANT',bx,midY-10);
+      ctx.font='500 15px Inter';ctx.fillStyle='rgba(13,85,52,.65)';ctx.fillText('Hospital Grade \u00b7 1:50',bx,midY+16);
+      ctx.restore();
+
+    } else {
+      shadow(W/2,H/2+180,120);
+      var bpts=[pt(-85,90,0),pt(85,90,0),pt(70,-12,0),pt(-70,-12,0)];
+      ctx.beginPath();ctx.moveTo(bpts[0].x,bpts[0].y);
+      bpts.slice(1).forEach(function(v){ctx.lineTo(v.x,v.y)});
+      ctx.closePath();ctx.fillStyle='#DCE8F8';ctx.fill();ctx.strokeStyle=p.ac;ctx.lineWidth=2;ctx.stroke();
+      var rim=pt(0,-12,0);
+      ctx.beginPath();ctx.ellipse(W/2,rim.y,80*rim.f,20*rim.f,0,0,Math.PI*2);
+      ctx.strokeStyle=p.ac;ctx.lineWidth=2.5;ctx.stroke();
+      var st=pt(18,-270,0),sb=pt(18,78,0);
+      ctx.beginPath();ctx.moveTo(st.x,st.y);ctx.lineTo(sb.x,sb.y);
+      ctx.strokeStyle='#8FA8C8';ctx.lineWidth=11*st.f;ctx.stroke();
+      var cols=['#BFDBFE','#93C5FD','#60A5FA','#3B82F6','#60A5FA','#93C5FD','#BFDBFE'];
+      for(var i=-3;i<=3;i++){
+        var mp=pt(18+i*20,-270,0);
+        ctx.beginPath();ctx.moveTo(mp.x,mp.y);ctx.lineTo(mp.x+i*5*mp.f,mp.y+60*mp.f);
+        ctx.strokeStyle=cols[i+3];ctx.lineWidth=10*mp.f;ctx.lineCap='round';ctx.stroke();
+      }
+      ctx.save();ctx.textAlign='center';
+      ctx.font='bold 24px Inter';ctx.fillStyle=p.ac;ctx.fillText('FACILITY KIT',W/2,H/2-140);
+      ctx.font='500 16px Inter';ctx.fillStyle=p.ac+'AA';ctx.fillText('Mop \u00b7 Wiper \u00b7 Cloths',W/2,H/2-112);
+      ctx.restore();
+    }
+    pill(p.lbl,W/2,H-56);
+  }
+
+  var last=0;
+  function loop(ts){
+    if(autoR&&!drag) ry+=.38*Math.min(ts-last,50)/1000;
+    last=ts;draw();requestAnimationFrame(loop);
+  }
+  requestAnimationFrame(loop);
+
+  var el=document.getElementById('si');
+  el.addEventListener('mousedown',function(e){drag=true;lx=e.clientX;ly=e.clientY});
+  document.addEventListener('mousemove',function(e){
+    if(!drag)return;
+    ry+=(e.clientX-lx)*.013;rx+=(e.clientY-ly)*.009;
+    rx=Math.max(-.7,Math.min(.7,rx));lx=e.clientX;ly=e.clientY;
+  });
+  document.addEventListener('mouseup',function(){drag=false});
+  el.addEventListener('touchstart',function(e){drag=true;lx=e.touches[0].clientX;ly=e.touches[0].clientY},{passive:false});
+  el.addEventListener('touchmove',function(e){
+    if(!drag)return;
+    ry+=(e.touches[0].clientX-lx)*.013;rx+=(e.touches[0].clientY-ly)*.009;
+    lx=e.touches[0].clientX;ly=e.touches[0].clientY;e.preventDefault();
+  },{passive:false});
+  el.addEventListener('touchend',function(){drag=false});
+  document.getElementById('pb').addEventListener('click',function(){
+    autoR=!autoR;this.innerHTML=autoR?'&#9646;&#9646;':'&#x25B6;';
+  });
+  document.querySelectorAll('.pp').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      document.querySelectorAll('.pp').forEach(function(b){b.classList.remove('on')});
+      btn.classList.add('on');cur=parseInt(btn.dataset.i);ry=0.42;rx=0.12;
+    });
+  });
+})();
+</script>
+</body>
+</html>

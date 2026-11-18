@@ -1,4 +1,19 @@
-*.png
-.claude/
+# Temporary & debug screenshots
 screenshot_*.png
 preview_*.png
+hero_epic_preview.png
+test_*.png
+
+# Python scripts and virtual environments
+__pycache__/
+*.py
+*.pyc
+
+# Local backups & scratchpads
+*.bak
+*_backup
+*.tmp
+.claude/
+cartier_stages/
+cartier_inspiration/
+v2/
